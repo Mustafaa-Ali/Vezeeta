@@ -8,13 +8,14 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignInDoctorComponent } from './components/sign-in-doctor/sign-in-doctor.component';
 import { SignUpDoctorComponent } from './components/sign-up-doctor/sign-up-doctor.component';
-import { OffersComponent } from './components/offers/offers.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
 import { FormsModule } from '@angular/forms';
 // import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { fas } from '@fortawesome/free-solid-svg-icons';
+
 
 @NgModule({
   declarations: [
@@ -23,23 +24,20 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     SignInDoctorComponent,
-    SignUpDoctorComponent,
-    OffersComponent
+    SignUpDoctorComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+
     FormsModule
     // FontAwesomeModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor() {
-    // Add an icon to the library for convenient access in other components
-    // library.addIconPacks(fas);
- }
-}
+export class AppModule { }

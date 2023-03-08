@@ -39,28 +39,25 @@
                 <div class="d-flex flex-column" style="width: calc(100% - 10px);">
                 <span class="text-black-50 text-start" style="font-size: 12px;">choose a speciality</span>
                  <span class="d-flex specia"><i class="fas fa-stethoscope "></i> choose a speciality</span>
+                 <select class="form-control" name="cat" id="cat" [(ngModel)]="selectedSpecialityID" >
+                    <option value="0">All Specialities</option> 
+                       <option *ngFor="let spe of speciality" [value]="spe.id">{{spe.Name}}</option>
+                   </select>
                 </div>
                 <i class="fas fa-caret-down"></i>
+              
                </button>
-              <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Dermatology (Skin)</a></li>
-                  <li><a class="dropdown-item" href="#">Dentistry (Teeth)</a></li>
-                  <li><a class="dropdown-item" href="#">Psychiatry (Mental, Emotional or Behavioral Disorders)</a></li>
-                  <li><a class="dropdown-item" href="#">Pediatrics and New Born (Child)</a></li>
-                  <li><a class="dropdown-item" href="#">Neurology (Brain & Nerves)</a></li>
-                  <li><a class="dropdown-item" href="#">Orthopedics (Bones)</a></li>
-                  <li><a class="dropdown-item" href="#">Gynaecology and Infertility</a></li>
-                  <li><a class="dropdown-item" href="#">Ear, Nose and Throat</a></li>
-                  <li><a class="dropdown-item" href="#">Cardiology and Vascular Disease (Heart)</a></li>
-                  <li><a class="dropdown-item" href="#">Allergy and Immunology (Sensitivity and Immunity)</a></li>
-                  <li><a class="dropdown-item" href="#">Andrology and Male Infertility</a></li>
-                  <li><a class="dropdown-item" href="#">Audiology</a></li>
-                  <li><a class="dropdown-item" href="#">Cardiology and Thoracic Surgery (Heart & Chest)</a></li>
-                  <li><a class="dropdown-item" href="#">Chest and Respiratory</a></li>
-                  <li><a class="dropdown-item" href="#">Diabetes and Endocrinology</a></li>
-                  <li><a class="dropdown-item" href="#">Diagnostic Radiology (Scan Centers)</a></li>
-                  <li><a class="dropdown-item" href="#">Dietitian and Nutrition</a></li>
-              </ul>
+               <!-- test Amany -->
+              <!-- <ul class="dropdown-menu">
+                 <ng-container *ngFor="let spe of speciality;let i=index">
+     
+
+                    <li><a class="dropdown-item" >{{spe.Name}}</a></li>
+                    
+                  </ng-container>
+
+                  
+              </ul> -->
             </div>
 
             <div class="dropdown">
@@ -68,36 +65,42 @@
                 <div class="d-flex flex-column" style="width: calc(100% - 10px);">
                 <span class="text-black-50 text-start" style="font-size: 12px;">in this city</span>
                  <span class="d-flex specia"><i class="fas fa-location-dot me-2"></i> choose city</span>
+                 <select class=" form-control" name="cat" id="cat" [(ngModel)]="selectedCityID" >
+                    <option value="0">All Cities</option>
+                    <option *ngFor="let city of cities" [value]="city.id">{{city.Name}}</option>
+                </select>
                 </div>
                 <i class="fas fa-caret-down"></i>
                </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Cairo</a></li>
-                <li><a class="dropdown-item" href="#">Giza</a></li>
-                <li><a class="dropdown-item" href="#">Alexanderia</a></li>
-                <li><a class="dropdown-item" href="#">Qalyubia</a></li>
-                <li><a class="dropdown-item" href="#">Gharbya</a></li>
-                <li><a class="dropdown-item" href="#">Menofia</a></li>
-                <li><a class="dropdown-item" href="#">fayoum</a></li>
-                <li><a class="dropdown-item" href="#">Dakahlya</a></li>
-                <li><a class="dropdown-item" href="#">sharqia</a></li>
-                <li><a class="dropdown-item" href="#">aswan</a></li>
-                <li><a class="dropdown-item" href="#">Qena</a></li>
-                <li><a class="dropdown-item" href="#">luxor</a></li>
-                <li><a class="dropdown-item" href="#">Sohag</a></li>
-              </ul>
+              <!-- <ul class="dropdown-menu"> -->
+                <!-- <select class="dropdown-menu form-control" name="cat" id="cat" [(ngModel)]="selectedCityID" >
+                    <option value="0">All</option>
+                    <option *ngFor="let city of cities" [value]="city.id">{{city.Name}}</option>
+                </select> -->
+                <!-- <ng-container *ngFor="let city of cities;let i=index">
+     
+
+                    <li><a class="dropdown-item" href="#">{{city.Name}}</a></li>
+                    
+                  </ng-container> -->
+               
+              <!-- </ul> -->
             </div>
             <div class="dropdown d-none d-md-block">
                 <button class="border p-2 d-flex justify-content-between align-items-center bg-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <div class="d-flex flex-column" style="width: calc(100% - 10px);">
                   <span class="text-black-50 text-start" style="font-size: 12px;">in this area</span>
                    <span class=" d-flex specia"><i class="fas fa-location-dot me-2"></i> choose area</span>
+                   <select class="form-control" name="cat" id="cat" [(ngModel)]="selectedSpecialityID" >
+                    <option value="0">All Area</option> 
+                      
+                   </select>
                   </div>
                   <i class="fas fa-caret-down"></i>
                  </button>
-                <ul class="dropdown-menu">
+                <!-- <ul class="dropdown-menu">
                     <li>All Area</li>
-                </ul>
+                </ul> -->
               </div>
 
             <div class="d-none d-md-block doctorName border ps-2 pt-2">
@@ -123,10 +126,16 @@
                     <div class="d-flex flex-column" style="width: calc(100% - 10px);">
                     <span class="text-black-50 text-start" style="font-size: 12px;">choose a speciality</span>
                      <span class="d-flex specia"><i class="fas fa-stethoscope me-2"></i> choose a speciality</span>
+                     <select class="form-control" name="cat" id="cat" [(ngModel)]="selectedSpecialityID" >
+                        <option value="0">All Specialities</option> 
+                           <option *ngFor="let spe of speciality" [value]="spe.id">{{spe.Name}}</option>
+                       </select>
                     </div>
                     <i class="fas fa-caret-down"></i>
                    </button>
-                  <ul class="dropdown-menu">
+
+                  
+                  <!-- <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Dermatology (Skin)</a></li>
                       <li><a class="dropdown-item" href="#">Dentistry (Teeth)</a></li>
                       <li><a class="dropdown-item" href="#">Psychiatry (Mental, Emotional or Behavioral Disorders)</a></li>
@@ -144,7 +153,7 @@
                       <li><a class="dropdown-item" href="#">Diabetes and Endocrinology</a></li>
                       <li><a class="dropdown-item" href="#">Diagnostic Radiology (Scan Centers)</a></li>
                       <li><a class="dropdown-item" href="#">Dietitian and Nutrition</a></li>
-                  </ul>
+                  </ul> -->
                 </div>
 
 
