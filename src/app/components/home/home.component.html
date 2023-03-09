@@ -186,30 +186,37 @@
 
                 <div class="offcanvas offcanvas-top h-100" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                 <div class="offcanvas-header">
-                    <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    <h5 class="offcanvas-title text-center w-75" id="offcanvasScrollingLabel">Search</h5>
+                    <button type="button" class="btn-close text-white" style='width: 6%;' data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <h5 class="offcanvas-title text-center " style='width: 94%;' id="offcanvasScrollingLabel">Search</h5>
 
                 </div>
                 <div class="offcanvas-body">
-                    <ul class=" ">
-                        <li><a class="dropdown-item" href="#">Dermatology (Skin)</a></li>
-                        <li><a class="dropdown-item" href="#">Dentistry (Teeth)</a></li>
-                        <li><a class="dropdown-item" href="#">Psychiatry (Mental, Emotional or Behavioral Disorders)</a></li>
-                        <li><a class="dropdown-item" href="#">Pediatrics and New Born (Child)</a></li>
-                        <li><a class="dropdown-item" href="#">Neurology (Brain & Nerves)</a></li>
-                        <li><a class="dropdown-item" href="#">Orthopedics (Bones)</a></li>
-                        <li><a class="dropdown-item" href="#">Gynaecology and Infertility</a></li>
-                        <li><a class="dropdown-item" href="#">Ear, Nose and Throat</a></li>
-                        <li><a class="dropdown-item" href="#">Cardiology and Vascular Disease (Heart)</a></li>
-                        <li><a class="dropdown-item" href="#">Allergy and Immunology (Sensitivity and Immunity)</a></li>
-                        <li><a class="dropdown-item" href="#">Andrology and Male Infertility</a></li>
-                        <li><a class="dropdown-item" href="#">Audiology</a></li>
-                        <li><a class="dropdown-item" href="#">Cardiology and Thoracic Surgery (Heart & Chest)</a></li>
-                        <li><a class="dropdown-item" href="#">Chest and Respiratory</a></li>
-                        <li><a class="dropdown-item" href="#">Diabetes and Endocrinology</a></li>
-                        <li><a class="dropdown-item" href="#">Diagnostic Radiology (Scan Centers)</a></li>
-                        <li><a class="dropdown-item" href="#">Dietitian and Nutrition</a></li>
-                    </ul>
+                <input type="text" class="form-control" placeholder="search">
+              <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
+                <li class="my-2 " *ngFor="let spe of speciality" [value]="spe.id" style="color:#0070cd; cursor: pointer;">{{spe.Name}}</li>
+              </ul>
+                    <!-- <form class="example-form mt-5">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                          <mat-label>Number</mat-label>
+                          <input type="text"
+                                 placeholder="Pick one"
+                                 aria-label="Number"
+                                 matInput
+                                 [formControl]="myControl"
+                                 [matAutocomplete]="auto">
+                          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                              {{option}}
+                            </mat-option>
+                          </mat-autocomplete>
+                        </mat-form-field>
+                      </form> -->
+                      <!-- <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of speciality" [value]="option.id">
+                          {{option.Name}}
+                        </mat-option>
+                      </mat-autocomplete> -->
+          
 
                 </div>
                 </div>
@@ -218,31 +225,14 @@
 
                 <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                 <div class="offcanvas-header">
-                    <button type="button" class="btn-close text-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    <h5 class="offcanvas-title w-75" id="offcanvasScrollingLabel">Search</h5>
+                    <button type="button" class="btn-close text-white" style='width: 6%;' data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <h5 class="offcanvas-title text-center " style='width: 94%;' id="offcanvasScrollingLabel">Search</h5>
 
                 </div>
                 <div class="offcanvas-body">
-                    <ul class=" ">
-                        <li><a class="dropdown-item" href="#">Dermatology (Skin)</a></li>
-                        <li><a class="dropdown-item" href="#">Dentistry (Teeth)</a></li>
-                        <li><a class="dropdown-item" href="#">Psychiatry (Mental, Emotional or Behavioral Disorders)</a></li>
-                        <li><a class="dropdown-item" href="#">Pediatrics and New Born (Child)</a></li>
-                        <li><a class="dropdown-item" href="#">Neurology (Brain & Nerves)</a></li>
-                        <li><a class="dropdown-item" href="#">Orthopedics (Bones)</a></li>
-                        <li><a class="dropdown-item" href="#">Gynaecology and Infertility</a></li>
-                        <li><a class="dropdown-item" href="#">Ear, Nose and Throat</a></li>
-                        <li><a class="dropdown-item" href="#">Cardiology and Vascular Disease (Heart)</a></li>
-                        <li><a class="dropdown-item" href="#">Allergy and Immunology (Sensitivity and Immunity)</a></li>
-                        <li><a class="dropdown-item" href="#">Andrology and Male Infertility</a></li>
-                        <li><a class="dropdown-item" href="#">Audiology</a></li>
-                        <li><a class="dropdown-item" href="#">Cardiology and Thoracic Surgery (Heart & Chest)</a></li>
-                        <li><a class="dropdown-item" href="#">Chest and Respiratory</a></li>
-                        <li><a class="dropdown-item" href="#">Diabetes and Endocrinology</a></li>
-                        <li><a class="dropdown-item" href="#">Diagnostic Radiology (Scan Centers)</a></li>
-                        <li><a class="dropdown-item" href="#">Dietitian and Nutrition</a></li>
-                    </ul>
-
+                    <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
+                        <li class="my-2 " *ngFor="let spe of speciality" [value]="spe.id" style="color:#0070cd; cursor: pointer;">{{spe.Name}}</li>
+                      </ul>
                 </div>
                 </div>
                 </div>
@@ -251,30 +241,14 @@
                 <button class="btn Brwose w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Brwose Doctor</button>
                 <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                     <div class="offcanvas-header">
-                        <button type="button" class="btn-close text-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        <h5 class="offcanvas-title w-75" id="offcanvasScrollingLabel">Search</h5>
+                        <button type="button" class="btn-close text-white" style='width: 6%;' data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <h5 class="offcanvas-title text-center " style='width: 94%;' id="offcanvasScrollingLabel">Search</h5>
 
                     </div>
                     <div class="offcanvas-body">
-                        <ul class=" ">
-                            <li><a class="dropdown-item" href="#">Dermatology (Skin)</a></li>
-                            <li><a class="dropdown-item" href="#">Dentistry (Teeth)</a></li>
-                            <li><a class="dropdown-item" href="#">Psychiatry (Mental, Emotional or Behavioral Disorders)</a></li>
-                            <li><a class="dropdown-item" href="#">Pediatrics and New Born (Child)</a></li>
-                            <li><a class="dropdown-item" href="#">Neurology (Brain & Nerves)</a></li>
-                            <li><a class="dropdown-item" href="#">Orthopedics (Bones)</a></li>
-                            <li><a class="dropdown-item" href="#">Gynaecology and Infertility</a></li>
-                            <li><a class="dropdown-item" href="#">Ear, Nose and Throat</a></li>
-                            <li><a class="dropdown-item" href="#">Cardiology and Vascular Disease (Heart)</a></li>
-                            <li><a class="dropdown-item" href="#">Allergy and Immunology (Sensitivity and Immunity)</a></li>
-                            <li><a class="dropdown-item" href="#">Andrology and Male Infertility</a></li>
-                            <li><a class="dropdown-item" href="#">Audiology</a></li>
-                            <li><a class="dropdown-item" href="#">Cardiology and Thoracic Surgery (Heart & Chest)</a></li>
-                            <li><a class="dropdown-item" href="#">Chest and Respiratory</a></li>
-                            <li><a class="dropdown-item" href="#">Diabetes and Endocrinology</a></li>
-                            <li><a class="dropdown-item" href="#">Diagnostic Radiology (Scan Centers)</a></li>
-                            <li><a class="dropdown-item" href="#">Dietitian and Nutrition</a></li>
-                        </ul>
+                        <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
+                            <li class="my-2 " *ngFor="let spe of speciality" [value]="spe.id" style="color:#0070cd; cursor: pointer;">{{spe.Name}}</li>
+                          </ul>
 
                     </div>
                     </div>
@@ -300,29 +274,13 @@
 
                     <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title w-75" id="offcanvasScrollingLabel">Search</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close text-white" style='width: 6%;' data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <h5 class="offcanvas-title text-center " style='width: 94%;' id="offcanvasScrollingLabel">Search1</h5>
                     </div>
                     <div class="offcanvas-body">
-                        <ul class=" ">
-                            <li><a class="dropdown-item" href="#">Dermatology (Skin)</a></li>
-                            <li><a class="dropdown-item" href="#">Dentistry (Teeth)</a></li>
-                            <li><a class="dropdown-item" href="#">Psychiatry (Mental, Emotional or Behavioral Disorders)</a></li>
-                            <li><a class="dropdown-item" href="#">Pediatrics and New Born (Child)</a></li>
-                            <li><a class="dropdown-item" href="#">Neurology (Brain & Nerves)</a></li>
-                            <li><a class="dropdown-item" href="#">Orthopedics (Bones)</a></li>
-                            <li><a class="dropdown-item" href="#">Gynaecology and Infertility</a></li>
-                            <li><a class="dropdown-item" href="#">Ear, Nose and Throat</a></li>
-                            <li><a class="dropdown-item" href="#">Cardiology and Vascular Disease (Heart)</a></li>
-                            <li><a class="dropdown-item" href="#">Allergy and Immunology (Sensitivity and Immunity)</a></li>
-                            <li><a class="dropdown-item" href="#">Andrology and Male Infertility</a></li>
-                            <li><a class="dropdown-item" href="#">Audiology</a></li>
-                            <li><a class="dropdown-item" href="#">Cardiology and Thoracic Surgery (Heart & Chest)</a></li>
-                            <li><a class="dropdown-item" href="#">Chest and Respiratory</a></li>
-                            <li><a class="dropdown-item" href="#">Diabetes and Endocrinology</a></li>
-                            <li><a class="dropdown-item" href="#">Diagnostic Radiology (Scan Centers)</a></li>
-                            <li><a class="dropdown-item" href="#">Dietitian and Nutrition</a></li>
-                        </ul>
+                        <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
+                            <li class="my-2 " *ngFor="let spe of speciality" [value]="spe.id" style="color:#0070cd; cursor: pointer;">{{spe.Name}}</li>
+                          </ul>
 
                     </div>
                     </div>
@@ -332,31 +290,14 @@
                     <button class="btn Brwose w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offbrwose" aria-controls="offcanvasScrolling">Brwose Doctor</button>
                     <div class="offcanvas offcanvas-top h-100" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offbrwose" aria-labelledby="offcanvasScrollingLabel">
                         <div class="offcanvas-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            <h5 class="offcanvas-title w-75" id="offcanvasScrollingLabel">Search</h5>
+                            <button type="button" class="btn-close text-white" style='width: 6%;' data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <h5 class="offcanvas-title text-center " style='width: 94%;' id="offcanvasScrollingLabel">Search</h5>
 
                         </div>
                         <div class="offcanvas-body">
-                            <ul class=" ">
-                                <li><a class="dropdown-item" href="#">Dermatology (Skin)</a></li>
-                                <li><a class="dropdown-item" href="#">Dentistry (Teeth)</a></li>
-                                <li><a class="dropdown-item" href="#">Psychiatry (Mental, Emotional or Behavioral Disorders)</a></li>
-                                <li><a class="dropdown-item" href="#">Pediatrics and New Born (Child)</a></li>
-                                <li><a class="dropdown-item" href="#">Neurology (Brain & Nerves)</a></li>
-                                <li><a class="dropdown-item" href="#">Orthopedics (Bones)</a></li>
-                                <li><a class="dropdown-item" href="#">Gynaecology and Infertility</a></li>
-                                <li><a class="dropdown-item" href="#">Ear, Nose and Throat</a></li>
-                                <li><a class="dropdown-item" href="#">Cardiology and Vascular Disease (Heart)</a></li>
-                                <li><a class="dropdown-item" href="#">Allergy and Immunology (Sensitivity and Immunity)</a></li>
-                                <li><a class="dropdown-item" href="#">Andrology and Male Infertility</a></li>
-                                <li><a class="dropdown-item" href="#">Audiology</a></li>
-                                <li><a class="dropdown-item" href="#">Cardiology and Thoracic Surgery (Heart & Chest)</a></li>
-                                <li><a class="dropdown-item" href="#">Chest and Respiratory</a></li>
-                                <li><a class="dropdown-item" href="#">Diabetes and Endocrinology</a></li>
-                                <li><a class="dropdown-item" href="#">Diagnostic Radiology (Scan Centers)</a></li>
-                                <li><a class="dropdown-item" href="#">Dietitian and Nutrition</a></li>
-                            </ul>
-
+                            <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
+                                <li class="my-2 " *ngFor="let spe of speciality" [value]="spe.id" style="color:#0070cd; cursor: pointer;">{{spe.Name}}</li>
+                              </ul>
                         </div>
                         </div>
 
@@ -463,28 +404,10 @@
                 <div id="slider-one" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <div class="row ">
-                            <div class="col-lg-3 col-6">
-                               <div class="p-1 text-start position-relative">
-                                <span class="off">70% OFF</span>
-                                <img src="assets/desktop.webp" width="" alt="">
-                                <h4>Teeth Cleaning</h4>
-                                <span class="old-price">500</span>
-                                <span class="offer-price">150 EGP</span>
-                                <p>236 Offers</p>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-6">
-                                <div class="p-1 text-start position-relative">
-                                    <span class="off">70% OFF</span>
-                                    <img src="assets/desktop.webp" width="" alt="">
-                                    <h4>Teeth Cleaning</h4>
-                                    <span class="old-price">500</span>
-                                    <span class="offer-price">150 EGP</span>
-                                    <p>236 Offers</p>
-                                   </div>
-                            </div>
-                            <div class="col-lg-3 col-6">
+                       
+                            <ng-container *ngFor="let spe of speciality; let i=index">
+                                <div class="row ">
+                                <div class="col-lg-3 col-6">
                                 <div class="p-1 text-start position-relative">
                                     <span class="off">70% OFF</span>
                                     <img src="assets/desktop.webp" width="" alt="">
@@ -493,18 +416,41 @@
                                     <span class="offer-price">150 EGP</span>
                                     <p>236 Offers</p>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-6">
-                                <div class="p-1 text-start position-relative">
-                                    <span class="off">70% OFF</span>
-                                    <img src="assets/desktop.webp" width="" alt="">
-                                    <h4>Teeth Cleaning</h4>
-                                    <span class="old-price">500</span>
-                                    <span class="offer-price">150 EGP</span>
-                                    <p>236 Offers</p>
+                                </div>
+                                <div class="col-lg-3 col-6">
+                                    <div class="p-1 text-start position-relative">
+                                        <span class="off">70% OFF</span>
+                                        <img src="assets/desktop.webp" width="" alt="">
+                                        <h4>Teeth Cleaning</h4>
+                                        <span class="old-price">500</span>
+                                        <span class="offer-price">150 EGP</span>
+                                        <p>236 Offers</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6">
+                                    <div class="p-1 text-start position-relative">
+                                        <span class="off">70% OFF</span>
+                                        <img src="assets/desktop.webp" width="" alt="">
+                                        <h4>Teeth Cleaning</h4>
+                                        <span class="old-price">500</span>
+                                        <span class="offer-price">150 EGP</span>
+                                        <p>236 Offers</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6">
+                                    <div class="p-1 text-start position-relative">
+                                        <span class="off">70% OFF</span>
+                                        <img src="assets/desktop.webp" width="" alt="">
+                                        <h4>Teeth Cleaning</h4>
+                                        <span class="old-price">500</span>
+                                        <span class="offer-price">150 EGP</span>
+                                        <p>236 Offers</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            </ng-container>
+                           
+                       
                       </div>
                       <div class="carousel-item ">
                         <div class="row ">
