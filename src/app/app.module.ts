@@ -11,8 +11,13 @@ import { SignUpDoctorComponent } from './components/sign-up-doctor/sign-up-docto
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+
+
 // import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { fas } from '@fortawesome/free-solid-svg-icons';
 
@@ -24,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     SignInDoctorComponent,
-    SignUpDoctorComponent
+    SignUpDoctorComponent,
+    
 
   ],
   imports: [
@@ -33,7 +39,11 @@ import { FormsModule } from '@angular/forms';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
 
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+
+    MatInputModule,
+    MatAutocompleteModule,
     // FontAwesomeModule,
 
   ],
