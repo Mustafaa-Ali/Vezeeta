@@ -23,8 +23,13 @@ export class HomeComponent {
 
   cities: ICity[] = [];
   offers:IOffer[]= [];
+  offerSlide1:IOffer[]= [];
+  offerSlide2:IOffer[]= [];
   speciality:ISpeciality [] =[];
+  specialityslide1:ISpeciality [] =[];
+  specialityslide2:ISpeciality [] =[];
   selectedCityID:number=0;
+  slideNum = 0;
   selectedSpecialityID:number=0;
   specialityOptions: string[] = [];
   myControl = new FormControl('');
@@ -51,25 +56,51 @@ export class HomeComponent {
    this.OS.getOffers().subscribe((data)=>{
     console.log("offers",data);
     this.offers = data;
+    console.log("offerSlide1",data[0])
+   for(let i = 0; i<4; i++) {
+   
+    this.offerSlide1.push(data[i])
+    
+  }
+   for(let i = 4; i<data.length; i++) {
+    this.offerSlide2.push(data[i])
+   
+  }
+   
+  console.log("one",this.offerSlide1)
+  console.log("two",this.offerSlide2)
    })
    this.SS.getSpecilaty().subscribe((data)=>{
     console.log("speciality",data);
     this.speciality = data;
-    data.map((item)=>{
-      console.log("item",item);
-      this.specialityOptions.push(item.Name);
-    })
+    for(let i = 0; i<4; i++) {
+   
+      this.specialityslide1.push(data[i])
+      
+    }
+     for(let i = 4; i<data.length; i++) {
+      this.specialityslide2.push(data[i])
+     
+    }
    })
 
 
 
+   
     
 
-  console.log("fillterd",this.filteredOptions)
+  
   }
 
 
+  createRange(number: any){
+    // return new Array(number);
+    return new Array(number).fill(0)
+      .map((n, index) => index + 1);
+  }
 
+
+  
 
   
   getCities(){

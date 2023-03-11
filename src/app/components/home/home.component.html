@@ -404,56 +404,46 @@
                 <div id="slider-one" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                       
-                            <ng-container *ngFor="let spe of speciality; let i=index">
-                                <div class="row ">
-                                <div class="col-lg-3 col-6">
+                        <!-- *ngFor="let off of offers let i=index" -->
+                           
+                                <div   class="row "  >
+                                <div class="col-lg-3 col-6" *ngFor="let off of offerSlide1 let i=index">
                                 <div class="p-1 text-start position-relative">
-                                    <span class="off">70% OFF</span>
-                                    <img src="assets/desktop.webp" width="" alt="">
-                                    <h4>Teeth Cleaning</h4>
-                                    <span class="old-price">500</span>
-                                    <span class="offer-price">150 EGP</span>
+                                    <span class="off">{{off.Discount}}% OFF</span>
+                                    <img src={{off.ImgUrl}} width="" alt="">
+                                    <h4>{{off.SessionName}}</h4>
+                                    <span class="old-price">{{off.Price}}</span>
+                                    <span class="offer-price">{{(off.Price* (off.Discount)/100)}} EGP</span>
                                     <p>236 Offers</p>
                                 </div>
                                 </div>
-                                <div class="col-lg-3 col-6">
-                                    <div class="p-1 text-start position-relative">
-                                        <span class="off">70% OFF</span>
-                                        <img src="assets/desktop.webp" width="" alt="">
-                                        <h4>Teeth Cleaning</h4>
-                                        <span class="old-price">500</span>
-                                        <span class="offer-price">150 EGP</span>
-                                        <p>236 Offers</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-6">
-                                    <div class="p-1 text-start position-relative">
-                                        <span class="off">70% OFF</span>
-                                        <img src="assets/desktop.webp" width="" alt="">
-                                        <h4>Teeth Cleaning</h4>
-                                        <span class="old-price">500</span>
-                                        <span class="offer-price">150 EGP</span>
-                                        <p>236 Offers</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-6">
-                                    <div class="p-1 text-start position-relative">
-                                        <span class="off">70% OFF</span>
-                                        <img src="assets/desktop.webp" width="" alt="">
-                                        <h4>Teeth Cleaning</h4>
-                                        <span class="old-price">500</span>
-                                        <span class="offer-price">150 EGP</span>
-                                        <p>236 Offers</p>
-                                    </div>
-                                </div>
+                      
+                                
                             </div>
-                            </ng-container>
+                      
                            
                        
                       </div>
+          
                       <div class="carousel-item ">
-                        <div class="row ">
+                     
+                            <div   class="row "  >
+                            <div class="col-lg-3 col-6" *ngFor="let off2 of offerSlide2 let i=index">
+                            <div class="p-1 text-start position-relative">
+                                <span class="off">{{off2.Discount}}% OFF</span>
+                                <img src={{off2.ImgUrl}} width="" alt="">
+                                <h4>{{off2.SessionName}}</h4>
+                                <span class="old-price">{{off2.Price}}</span>
+                                <span class="offer-price">{{(off2.Price* (off2.Discount)/100)}} EGP</span>
+                                <p>236 Offers</p>
+                            </div>
+                            </div>
+                  
+                            
+                        </div>
+                 
+                       
+                        <!-- <div class="row ">
                             <div class="col-lg-3 col-6">
                                <div class="p-1 text-start position-relative">
                                 <span class="off">70% OFF</span>
@@ -494,51 +484,7 @@
                                     <p>236 Offers</p>
                                 </div>
                             </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item ">
-                        <div class="row ">
-                            <div class="col-lg-3 col-6">
-                               <div class="p-1 text-start position-relative">
-                                <span class="off">70% OFF</span>
-                                <img src="assets/desktop.webp" width="" alt="">
-                                <h4>Teeth Cleaning</h4>
-                                <span class="old-price">500</span>
-                                <span class="offer-price">150 EGP</span>
-                                <p>236 Offers</p>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-6">
-                                <div class="p-1 text-start position-relative">
-                                    <span class="off">70% OFF</span>
-                                    <img src="assets/desktop.webp" width="" alt="">
-                                    <h4>Teeth Cleaning</h4>
-                                    <span class="old-price">500</span>
-                                    <span class="offer-price">150 EGP</span>
-                                    <p>236 Offers</p>
-                                   </div>
-                            </div>
-                            <div class="col-lg-3 col-6">
-                                <div class="p-1 text-start position-relative">
-                                    <span class="off">70% OFF</span>
-                                    <img src="assets/desktop.webp" width="" alt="">
-                                    <h4>Teeth Cleaning</h4>
-                                    <span class="old-price">500</span>
-                                    <span class="offer-price">150 EGP</span>
-                                    <p>236 Offers</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6">
-                                <div class="p-1 text-start position-relative">
-                                    <span class="off">70% OFF</span>
-                                    <img src="assets/desktop.webp" width="" alt="">
-                                    <h4>Teeth Cleaning</h4>
-                                    <span class="old-price">500</span>
-                                    <span class="offer-price">150 EGP</span>
-                                    <p>236 Offers</p>
-                                </div>
-                            </div>
-                        </div>
+                        </div> -->
                       </div>
 
                     </div>
@@ -565,75 +511,29 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <div class="row ">
-                        <div class="col-lg-3 col-6 mb-3">
+                        <div class="col-lg-3 col-6 mb-3"  *ngFor="let spe1 of specialityslide1 let i=index" >
                            <div class=" text-start position-relative  book-slide">
 
-                            <img src="assets/teethSlide.webp" width="" alt="">
-                            <h4>Teeth Cleaning</h4>
+                            <img src={{spe1.imgUrl}} width="" alt="">
+                            <h4>{{spe1.Name}}</h4>
 
                            </div>
                         </div>
-                        <div class="col-lg-3 col-6 mb-3">
-                            <div class=" text-start position-relative book-slide">
-
-                                <img src="assets/teethSlide.webp" width="" alt="">
-                                <h4>Teeth Cleaning</h4>
-
-                               </div>
-                        </div>
-                        <div class="col-lg-3 col-6 mb-3">
-                            <div class=" text-start position-relative book-slide">
-
-                                <img src="assets/teethSlide.webp" width="" alt="">
-                                <h4>Teeth Cleaning</h4>
-
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6 mb-3">
-                            <div class=" text-start position-relative book-slide">
-
-                                <img src="assets/teethSlide.webp" width="" alt="">
-                                <h4>Teeth Cleaning</h4>
-
-                            </div>
-                        </div>
+                   
                     </div>
 
                   </div>
                   <div class="carousel-item">
                     <div class="row ">
-                        <div class="col-lg-3 col-6 mb-3">
+                        <div class="col-lg-3 col-6 mb-3" *ngFor="let spe2 of specialityslide2 let i=index">
                            <div class=" text-start position-relative book-slide">
 
-                            <img src="assets/teethSlide.webp" width="" alt="">
-                            <h4>Teeth Cleaning</h4>
+                            <img src={{spe2.imgUrl}} width="" alt="">
+                            <h4>{{spe2.Name}}</h4>
 
                            </div>
                         </div>
-                        <div class="col-lg-3 col-6 mb-3">
-                            <div class=" text-start position-relative book-slide">
-
-                                <img src="assets/teethSlide.webp" width="" alt="">
-                                <h4>Teeth Cleaning</h4>
-
-                               </div>
-                        </div>
-                        <div class="col-lg-3 col-6 mb-3">
-                            <div class=" text-start position-relative book-slide">
-
-                                <img src="assets/teethSlide.webp" width="" alt="">
-                                <h4>Teeth Cleaning</h4>
-
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6 mb-3">
-                            <div class=" text-start position-relative book-slide">
-
-                                <img src="assets/teethSlide.webp" width="" alt="">
-                                <h4>Teeth Cleaning</h4>
-
-                            </div>
-                        </div>
+                      
                     </div>
                   </div>
                   <div class="carousel-item">
