@@ -24,7 +24,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { OffersComponent } from './components/offers/offers.component';
 
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
 // import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { fas } from '@fortawesome/free-solid-svg-icons';
 
@@ -39,7 +39,8 @@ import { OffersComponent } from './components/offers/offers.component';
     SignUpDoctorComponent,
     OffersComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    
 
 
   ],
@@ -58,6 +59,7 @@ import { OffersComponent } from './components/offers/offers.component';
 
     MatInputModule,
     MatAutocompleteModule,
+    CarouselModule
     // FontAwesomeModule,
 
   ],
