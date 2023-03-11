@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -11,11 +12,17 @@ import { SignUpDoctorComponent } from './components/sign-up-doctor/sign-up-docto
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { provideAuth,getAuth, EmailAuthProvider } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { OffersComponent } from './components/offers/offers.component';
 
 
 // import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -30,14 +37,21 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
     HomeComponent,
     SignInDoctorComponent,
     SignUpDoctorComponent,
-    
+    OffersComponent,
+    SignUpComponent,
+    SignInComponent
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase,)),
     provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
 
     FormsModule,
     ReactiveFormsModule,

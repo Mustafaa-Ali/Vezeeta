@@ -97,6 +97,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "vezeeta:build:production",
+            "firebaseProject": "vezeeta-a2089",
+            "firebaseHostingSite": "vezeeta-a2089"
+          }
         }
       }
     }
