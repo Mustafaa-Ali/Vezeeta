@@ -3,18 +3,16 @@ import { collection, query, where, getDocs, Firestore } from '@angular/fire/fire
 import { collectionData } from '@angular/fire/firestore';
 // import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
-import {ICity} from './../models/ICity';
-
+import {IOffer} from './../models/IOffer'
 @Injectable({
   providedIn: 'root'
 })
-export class CityService {
-  cities: ICity[] = []
-constructor(private firestore: Firestore) { }
+export class OfferService {
 
-getCity() {
-  let cityRef = collection(this.firestore, "City")
-  return collectionData(cityRef, { idField: "id" }) as Observable<ICity[]>
-}
+  constructor(private firestore: Firestore) { }
 
+  getOffers() {
+    let offerRef = collection(this.firestore, "Offers")
+    return collectionData(offerRef, { idField: "id" }) as Observable<IOffer[]>
+  }
 }
