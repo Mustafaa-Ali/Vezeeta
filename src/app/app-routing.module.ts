@@ -7,6 +7,8 @@ import { SignInDoctorComponent } from './components/sign-in-doctor/sign-in-docto
 import { SignUpDoctorComponent } from './components/sign-up-doctor/sign-up-doctor.component';
 import { OffersComponent } from './components/offers/offers.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
 const routes: Routes = [
 
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path: 'SignInDoctor', component:SignInDoctorComponent},
   {path:'SignUpDoctor', component: SignUpDoctorComponent},
   {path: 'searchResult', component:SearchResultComponent},
-   {path:'Offers',component:OffersComponent}
+   {path:'Offers',component:OffersComponent},
+   {path:'SignUp',component:SignUpComponent},
+   {path:'signIn',component:SignInComponent}
 ];
 
 @NgModule({
