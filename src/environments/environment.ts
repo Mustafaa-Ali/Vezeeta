@@ -1,5 +1,4 @@
 export const environment = {
-
   firebase: {
     projectId: 'vezeeta-a2089',
     appId: '1:467322917635:web:ae69088544a10f09838f36',
