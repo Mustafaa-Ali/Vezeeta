@@ -222,7 +222,7 @@ footer ul li a:hover {
 
 .off {
     position: absolute;
-    top: 17px;
+    top: 50px;
     left: 20px;
     right: unset;
     direction: ltr;
@@ -348,18 +348,37 @@ footer ul li a:hover {
 
 }
 
-/* Dr Name hover */
 
 .dr-name {
-    position: absolute;
-    bottom: 0;
-    display: none;
-    background-color: #ffffff93;
-
-
-}
-
-.card:hover .dr-name {
-    bottom: 50%;
-    display: block;
-}
+    border: 2px solid #FFF;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+  
+    &:hover {
+      img {
+        opacity: .6;
+      }
+      h4 {
+        transform: translate(0, 0);
+      }
+      background-color: rgba(0, 0, 0, 0.5); 
+    }
+  
+    img {
+      transition: .4s;
+    }
+  
+    h4 {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 5px 8px;
+      margin: 0;
+      color: #ffffff;
+      font-size: 16px;
+      transform: translate(0, 100%);
+      transition: .4s;
+    }
+  }
+  
