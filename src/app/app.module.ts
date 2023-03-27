@@ -40,7 +40,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     OffersComponent,
     SignUpComponent,
     SignInComponent,
-    
+
 
 
   ],
