@@ -9,6 +9,7 @@ import { OffersComponent } from './components/offers/offers.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { OfferDetailsComponent } from './components/offer-details/offer-details.component';
 
 const routes: Routes = [
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'searchResult', component:SearchResultComponent},
    {path:'Offers',component:OffersComponent},
    {path:'SignUp',component:SignUpComponent},
-   {path:'signIn',component:SignInComponent}
+   {path:'signIn',component:SignInComponent},
+   {path:'OfferDetails/:id',component:OfferDetailsComponent},
 ];
 
 @NgModule({

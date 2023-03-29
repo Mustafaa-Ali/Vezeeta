@@ -25,6 +25,8 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { OffersComponent } from './components/offers/offers.component';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { OfferDetailsComponent } from './components/offer-details/offer-details.component';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
 // import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { fas } from '@fortawesome/free-solid-svg-icons';
 
@@ -40,6 +42,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     OffersComponent,
     SignUpComponent,
     SignInComponent,
+    OfferDetailsComponent,
     
 
 
@@ -59,7 +62,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 
     MatInputModule,
     MatAutocompleteModule,
-    CarouselModule
+    CarouselModule,
+    provideDatabase(() => getDatabase())
     // FontAwesomeModule,
 
   ],

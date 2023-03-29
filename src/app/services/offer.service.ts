@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { collection, query, where, getDocs, Firestore } from '@angular/fire/firestore';
+import { collection, query, where, getDocs, Firestore, doc, docData } from '@angular/fire/firestore';
 import { collectionData } from '@angular/fire/firestore';
 // import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
@@ -15,4 +15,14 @@ export class OfferService {
     let offerRef = collection(this.firestore, "Offers")
     return collectionData(offerRef, { idField: "id" }) as Observable<IOffer[]>
   }
+
+  getOffersDetails(id:any) {
+    
+    let offerRef = doc(this.firestore, "Offers",id)
+    return docData(offerRef) as Observable<IOffer>
+  }
+
+  // getOfferById(OfferID:number):Observable<IOffer>{
+  //   return this.<IOffer>(`${this.firestore, "Offers/"}${OfferID}`)
 }
+
