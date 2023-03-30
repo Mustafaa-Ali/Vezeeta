@@ -9,23 +9,25 @@ import { OffersComponent } from './components/offers/offers.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { AuthGuardGuard } from './Guards/auth-guard.guard';
 
 const routes: Routes = [
 
   {path:'',redirectTo:'/Home',pathMatch:'full'},
-  {path:'Home',component: HomeComponent},
-  {path: 'ContactUs',component: ContactUsComponent },
-  {path: 'PrivatePolicy',component: PrivacyPolicyComponent },
-  {path: 'SignInDoctor', component:SignInDoctorComponent},
-  {path:'SignUpDoctor', component: SignUpDoctorComponent},
-  {path: 'searchResult', component:SearchResultComponent},
-   {path:'Offers',component:OffersComponent},
+  {path:'Home',component: HomeComponent,canActivate:[AuthGuardGuard]},
+  {path: 'ContactUs',component: ContactUsComponent ,canActivate:[AuthGuardGuard]},
+  {path: 'PrivatePolicy',component: PrivacyPolicyComponent,canActivate:[AuthGuardGuard] },
+  {path: 'SignInDoctor', component:SignInDoctorComponent,canActivate:[AuthGuardGuard]},
+  {path:'SignUpDoctor', component: SignUpDoctorComponent,canActivate:[AuthGuardGuard]},
+  {path: 'searchResult', component:SearchResultComponent,canActivate:[AuthGuardGuard]},
+   {path:'Offers',component:OffersComponent,canActivate:[AuthGuardGuard]},
    {path:'SignUp',component:SignUpComponent},
    {path:'signIn',component:SignInComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+
+exports: [RouterModule]
 })
 export class AppRoutingModule { }
