@@ -101,7 +101,7 @@
                 </div>
               </div>
 
-            <div class="searchh text-light fw-bold fs-5 text-center d-flex justify-content-center align-items-center" routerLink="/searchResult" (onclick)="SearchDoctor()">
+            <div class="searchh text-light fw-bold fs-5 text-center d-flex justify-content-center align-items-center" routerLink="/searchResult" (click)="SearchDoctor()">
                 <i class="bi bi-search me-2"></i>
                 <span>search</span>
               </div>
@@ -412,9 +412,9 @@
                                     <span class="off">{{off.Discount}}% OFF</span>
                                     <img src={{off.ImgUrl}} width="" alt="">
                                     <h4>{{off.SessionName}}</h4>
-                                    <span class="old-price">{{off.Price}}</span>
-                                    <span class="offer-price">{{(off.Price* (off.Discount)/100)}} EGP</span>
-                                    <p>236 Offers</p>
+                                    <span class="old-price">{{off.PriceBefore}}</span>
+                                    <span class="offer-price">{{off.Price}} EGP</span>
+                                    <!-- <p>236 Offers</p> -->
                                 </div>
                                 </div>
                       

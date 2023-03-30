@@ -10,6 +10,7 @@ import { SearchResultComponent } from './components/search-result/search-result.
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { AuthGuardGuard } from './Guards/auth-guard.guard';
+import { OfferDetailsComponent } from './components/offer-details/offer-details.component';
 
 const routes: Routes = [
 
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'searchResult', component:SearchResultComponent,canActivate:[AuthGuardGuard]},
    {path:'Offers',component:OffersComponent,canActivate:[AuthGuardGuard]},
    {path:'SignUp',component:SignUpComponent},
-   {path:'signIn',component:SignInComponent}
+   {path:'signIn',component:SignInComponent},
+   {path:'OfferDetails/:id',component:OfferDetailsComponent,canActivate:[AuthGuardGuard]},
 ];
 
 @NgModule({
