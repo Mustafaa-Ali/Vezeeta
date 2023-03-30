@@ -13,5 +13,12 @@ export interface IOffer {
     Save:number,
     DoctorImg:string,
     Num:string,
-    Booked:number
+    Booked:number,
+    Views:number,
+    Time:string,
+    BookingsImg:string,
+    ViewsImg:string,
+    TimeImg:string
+    Loc:number,
+    PriceInfo:string
 }

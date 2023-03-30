@@ -22,7 +22,5 @@ export class OfferService {
     return docData(offerRef) as Observable<IOffer>
   }
 
-  // getOfferById(OfferID:number):Observable<IOffer>{
-  //   return this.<IOffer>(`${this.firestore, "Offers/"}${OfferID}`)
 }
 
