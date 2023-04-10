@@ -7,20 +7,30 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  userLogged:boolean;
-  constructor(private AuthService:AuthService) {
-    this.userLogged=this.AuthService.userLoggedState;
-  }
+  userLogged!: boolean;
+
+  constructor(private authService: AuthService) {}
+
   ngOnInit(): void {
-    this.AuthService.getLoggedStatus().subscribe(result=>{
-      this.userLogged=result;
-      // console.log(this.userLogged);
+    this.authService.getLoggedStatus().subscribe((loggedIn: boolean) => {
+      this.userLogged = loggedIn;
+    });
+  }
 
-    })
 
-      }
-      
       onLogout(){
-        this.AuthService.logout()
+        this.authService.logout()
     }
+
+
+    switchLanguage() {
+      const lang = document.documentElement.lang;
+      if (lang === 'en') {
+        document.documentElement.lang = 'ar';
+      } else {
+        document.documentElement.lang = 'en';
+      }
+      location.reload();
+    }
+
 }
