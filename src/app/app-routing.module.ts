@@ -11,6 +11,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { AuthGuardGuard } from './Guards/auth-guard.guard';
 import { OfferDetailsComponent } from './components/offer-details/offer-details.component';
+import { BookingFormComponent } from './components/booking-form/booking-form.component';
+import { ThanksSubmitComponent } from './components/thanks-submit/thanks-submit.component';
+import { MyAppointmentsComponent } from './components/my-appointments/my-appointments.component';
 
 const routes: Routes = [
 
@@ -24,6 +27,9 @@ const routes: Routes = [
    {path:'Offers',component:OffersComponent,canActivate:[AuthGuardGuard]},
    {path:'SignUp',component:SignUpComponent},
    {path:'signIn',component:SignInComponent},
+   {path:'bookingForm',component:BookingFormComponent},
+   {path:'thanks',component:ThanksSubmitComponent},
+   {path:'myAppointments',component:MyAppointmentsComponent},
    {path:'OfferDetails/:id',component:OfferDetailsComponent,canActivate:[AuthGuardGuard]},
 ];
 

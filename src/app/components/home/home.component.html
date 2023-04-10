@@ -40,14 +40,14 @@
                 <!-- <span class="text-black-50 text-start" style="font-size: 12px;">choose a speciality</span> -->
                  <span class="d-flex specia"><i class="fas fa-stethoscope "></i> choose a speciality</span>
                  <select class="form-control" name="cat" id="cat" [(ngModel)]="selectedSpecialityID" >
-                    <option value="0" style="color:#0070cd">All Specialities</option> 
+                    <option value="0" style="color:#0070cd">All Specialities</option>
                        <option *ngFor="let spe of speciality" [value]="spe.id" style="color:#0070cd">{{spe.Name}}</option>
                    </select>
                 </div>
                 <!-- <i class="fas fa-caret-down px-2" style="margin-top: 1.75rem;"></i> -->
-              
+
                </button>
-         
+
             </div>
 
             <div class="dropdown">
@@ -68,12 +68,12 @@
                     <option *ngFor="let city of cities" [value]="city.id">{{city.Name}}</option>
                 </select> -->
                 <!-- <ng-container *ngFor="let city of cities;let i=index">
-     
+
 
                     <li><a class="dropdown-item" href="#">{{city.Name}}</a></li>
-                    
+
                   </ng-container> -->
-               
+
               <!-- </ul> -->
             </div>
             <div class="dropdown d-none d-md-block">
@@ -82,8 +82,8 @@
                   <!-- <span class="text-black-50 text-start" style="font-size: 12px;">in this area</span> -->
                    <span class=" d-flex specia"><i class="fas fa-location-dot me-2"></i> choose area</span>
                    <select class="form-control" name="cat"  >
-                    <option value="0">All Area</option> 
-                      
+                    <option value="0">All Area</option>
+
                    </select>
                   </div>
                   <!-- <i class="fas fa-caret-down px-2" style="margin-top: 1.75rem;"></i> -->
@@ -117,12 +117,12 @@
                     <!-- <span class="text-black-50 text-start" style="font-size: 12px;">choose a speciality</span> -->
                      <span class="d-flex specia"><i class="fas fa-stethoscope me-2"></i> choose a speciality</span>
                      <select class="form-control" name="cat" id="cat" [(ngModel)]="selectedSpecialityID" >
-                        <option value="0" style="color:#0070cd">All Specialities</option> 
+                        <option value="0" style="color:#0070cd">All Specialities</option>
                            <option *ngFor="let spe of speciality" [value]="spe.id" style="color:#0070cd">{{spe.Name}}</option>
                        </select>
-                      
+
                     </div>
-                  
+
                    </button>
 
                 </div>
@@ -216,7 +216,7 @@
                           {{option.Name}}
                         </mat-option>
                       </mat-autocomplete> -->
-          
+
 
                 </div>
                 </div>
@@ -405,7 +405,7 @@
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                         <!-- *ngFor="let off of offers let i=index" -->
-                           
+
                                 <div   class="row "  >
                                 <div class="col-lg-3 col-6" *ngFor="let off of offerSlide1 let i=index">
                                 <div class="p-1 text-start position-relative">
@@ -417,16 +417,16 @@
                                     <!-- <p>236 Offers</p> -->
                                 </div>
                                 </div>
-                      
-                                
+
+
                             </div>
-                      
-                           
-                       
+
+
+
                       </div>
-          
+
                       <div class="carousel-item ">
-                     
+
                             <div   class="row "  >
                             <div class="col-lg-3 col-6" *ngFor="let off2 of offerSlide2 let i=index">
                             <div class="p-1 text-start position-relative">
@@ -438,11 +438,11 @@
                                 <p>236 Offers</p>
                             </div>
                             </div>
-                  
-                            
+
+
                         </div>
-                 
-                       
+
+
                         <!-- <div class="row ">
                             <div class="col-lg-3 col-6">
                                <div class="p-1 text-start position-relative">
@@ -519,7 +519,7 @@
 
                            </div>
                         </div>
-                   
+
                     </div>
 
                   </div>
@@ -533,7 +533,7 @@
 
                            </div>
                         </div>
-                      
+
                     </div>
                   </div>
                   <div class="carousel-item">
