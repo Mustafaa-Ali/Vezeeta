@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -17,9 +17,18 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { provideAuth,getAuth, EmailAuthProvider } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AuthService } from './services/auth.service';
+
+
+
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MbscModule } from '@mobiscroll/angular/';
+
+import { NgbDatepicker, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 import {MatInputModule} from '@angular/material/input';
+import { DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
 
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { OffersComponent } from './components/offers/offers.component';
@@ -27,15 +36,17 @@ import { OffersComponent } from './components/offers/offers.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OfferDetailsComponent } from './components/offer-details/offer-details.component';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { CommonModule } from '@angular/common';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+import { BookingFormComponent } from './components/booking-form/booking-form.component';
+import { ThanksSubmitComponent } from './components/thanks-submit/thanks-submit.component';
+import { MyAppointmentsComponent } from './components/my-appointments/my-appointments.component';
+import { FilterPipe } from './Pipes/filter.pipe';
+import { SortPipe } from './Pipes/sort.pipe';
+
 // import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { fas } from '@fortawesome/free-solid-svg-icons';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient,HttpClientModule } from '@angular/common/http';
 
-export function httpTranslateLoaderFactory(http:HttpClient){
-  return new TranslateHttpLoader(http,'./assets/i18n/','.json')
-}
 
 @NgModule({
   declarations: [
@@ -49,12 +60,30 @@ export function httpTranslateLoaderFactory(http:HttpClient){
     SignUpComponent,
     SignInComponent,
     OfferDetailsComponent,
-    
+    SearchResultComponent,
+    BookingFormComponent,
+    ThanksSubmitComponent,
+    MyAppointmentsComponent,
+    FilterPipe,
+    SortPipe,
+
+
+
+
+
+
   ],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    // NgModule,
+
+    MbscModule,
+
+
+    HttpClientModule,
+    HttpClientJsonpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     provideFirebaseApp(() => initializeApp(environment.firebase,)),
@@ -63,23 +92,18 @@ export function httpTranslateLoaderFactory(http:HttpClient){
 
     FormsModule,
     ReactiveFormsModule,
-
+    NgbModule,
     MatInputModule,
+    CommonModule,
     MatAutocompleteModule,
     CarouselModule,
     provideDatabase(() => getDatabase()),
+
+
     // FontAwesomeModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      defaultLanguage:'en',
-      loader:{
-        provide:TranslateLoader,
-        useFactory:httpTranslateLoaderFactory,
-        deps:[HttpClient]
-      }
-    })
+
   ],
-  providers: [],
+  providers: [FilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

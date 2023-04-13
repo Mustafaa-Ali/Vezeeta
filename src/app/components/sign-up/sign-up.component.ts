@@ -7,14 +7,14 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent  implements OnInit{
-  
+
   email:string='';
   password:string ='';
   name:string ='';
   gender:string ='';
   birthDate:string='';
   mobileNumber:string='';
-
+  isAdmin=false;
 
 
 
@@ -50,13 +50,15 @@ export class SignUpComponent  implements OnInit{
     }
 
 
-    this.auth.register(this.email,this.password);
+    this.auth.register(this.email,this.password, this.isAdmin);
     this.email='';
     this.password='';
     this.name='';
     this.gender='';
     this.birthDate=''
     this.mobileNumber='';
+    this.isAdmin=false
+
 
 
 

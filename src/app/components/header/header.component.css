@@ -42,8 +42,8 @@ header{
 }
 .header-top .nav-link::after{
     content: "|";
-    margin: 0px 5px;
-    text-align: left;
+    margin: 0px 5.5px;
+    text-align: center;
     color: white;
     font-size: 15px;
     line-height: inherit;
