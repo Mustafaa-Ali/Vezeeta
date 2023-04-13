@@ -47,6 +47,14 @@ import { SortPipe } from './Pipes/sort.pipe';
 // import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { fas } from '@fortawesome/free-solid-svg-icons';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+
+export function httpTranslateLoaderFactory(http:HttpClient){
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json')
+}
+
 
 @NgModule({
   declarations: [
@@ -82,7 +90,7 @@ import { SortPipe } from './Pipes/sort.pipe';
     MbscModule,
 
 
-    HttpClientModule,
+   
     HttpClientJsonpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
@@ -98,6 +106,16 @@ import { SortPipe } from './Pipes/sort.pipe';
     MatAutocompleteModule,
     CarouselModule,
     provideDatabase(() => getDatabase()),
+
+     HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage:'en',
+      loader:{
+        provide:TranslateLoader,
+        useFactory:httpTranslateLoaderFactory,
+        deps:[HttpClient]
+      }
+    })
 
 
     // FontAwesomeModule,

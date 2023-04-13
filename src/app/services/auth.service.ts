@@ -11,6 +11,7 @@ import { BehaviorSubject, Observable, of, switchMap } from 'rxjs';
 export class AuthService {
   private isUserLoggedSubject: BehaviorSubject<boolean>;
   private fireauth: AngularFireAuth;
+  userLoggedState: boolean | undefined;
 
   constructor(fireauth: AngularFireAuth, private router: Router ,private firestore: AngularFirestore) {
     this.fireauth = fireauth;

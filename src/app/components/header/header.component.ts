@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -7,19 +8,30 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  userLogged!: boolean;
+  userLoggedState: boolean | undefined;
+  currentLang:string | undefined;
+  userLogged: boolean | undefined;
 
-  constructor(private authService: AuthService) {}
+  constructor(private AuthService:AuthService,public translateservice:TranslateService) {
+    this.userLogged=this.AuthService.userLoggedState;
+    this.currentLang = localStorage.getItem('currentLang') || 'en';
+    this.translateservice.use(this.currentLang)
+  }
 
+  changeCurrentLang(lang:string){
+    this.translateservice.use(lang)
+    localStorage.setItem('currentLang',lang)
+  }
+  
   ngOnInit(): void {
-    this.authService.getLoggedStatus().subscribe((loggedIn: boolean) => {
+    this.AuthService.getLoggedStatus().subscribe((loggedIn: boolean) => {
       this.userLogged = loggedIn;
     });
   }
 
 
       onLogout(){
-        this.authService.logout()
+        this.AuthService.logout()
     }
 
 

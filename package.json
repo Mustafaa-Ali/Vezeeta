@@ -26,6 +26,8 @@
         "@fortawesome/free-solid-svg-icons": "^6.3.0",
         "@mobiscroll/angular": "https://npm.mobiscroll.com/@mobiscroll/angular-trial/-/angular-trial-5.22.3.tgz",
         "@ng-bootstrap/ng-bootstrap": "^14.1.0",
+        "@ngx-translate/core": "^14.0.0",
+        "@ngx-translate/http-loader": "^7.0.0",
         "angular-bootstrap-datetimepicker": "^4.0.2",
         "appointment-picker": "^2.0.0",
         "mobiscroll": "^3.0.0-beta6",
