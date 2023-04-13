@@ -9,21 +9,36 @@
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="navbar-nav  mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" routerLink="/SignUp" [hidden]="userLogged">Sign Up</a>
+              <a class="nav-link active" aria-current="page" href="#" routerLink="/SignUp" [hidden]="userLogged">{{'Sign Up' | translate}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/signIn" [hidden]="userLogged">Login</a>
+              <a class="nav-link" routerLink="/signIn" [hidden]="userLogged">{{'Login' | translate}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/signIn" (click)="onLogout()" [hidden]="!userLogged">Logout</a>
+              <a class="nav-link" routerLink="/signIn" (click)="onLogout()" [hidden]="!userLogged">{{'Logout' | translate}}</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link ">Vezeeta For Doctors</a>
+              <a class="nav-link ">{{'Vezeeta For Doctors' | translate}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " routerLink="/ContactUs">Contact Us</a>
+              <a class="nav-link " routerLink="/ContactUs" >{{'Contact Us' | translate}}</a>
             </li>
+            <!-- <select name="" id="" (change)="translate($event)">
+              <option value="en">English</option>
+              <option value="ar">عربى</option>
+            </select> -->
+            <div>
+              
+                <option class="nav-link" (click)="changeCurrentLang('en')">English</option>
+                
+             
+                <option class="nav-link" (click)="changeCurrentLang('ar')">عربى</option>
+              
+            </div>
+            
+            
+            
           </ul>
 
         </div>
@@ -44,12 +59,12 @@
           <div class="offcanvas-body py-0">
              <ul class="list-unstyled">
               <li class="py-2">
-                  <a class="text-decoration-none text-white " href=""><i class="bi bi-house-door fw-bolder fs-3 pe-2"></i> Home Page</a>
+                  <a class="text-decoration-none text-white " href=""><i class="bi bi-house-door fw-bolder fs-3 pe-2"></i>Home Page</a>
               </li>
               <hr style="opacity: 0.5; width: 100%;
               border-color: rgba(222, 221, 221, 0.5) !important;"/>
               <li class="py-2">
-                  <a class="text-decoration-none text-white " href=""><i class="bi bi-person-plus-fill fw-bolder fs-3 pe-2"></i>Join Naw as a user</a>
+                  <a class="text-decoration-none text-white " href=""><i class="bi bi-person-plus-fill fw-bolder fs-3 pe-2"></i>Join Now as a user</a>
               </li>
               <hr style="opacity: 0.5; width: 100%;
               border-color: rgba(222, 221, 221, 0.5) !important;"/>

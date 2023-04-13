@@ -10,7 +10,7 @@ import { ISpeciality } from 'src/app/models/ISpeciality';
 import { SpecialityService } from 'src/app/services/speciality.service';
 import { FormControl } from '@angular/forms';
 import {map, startWith} from 'rxjs/operators';
-
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -34,12 +34,12 @@ export class HomeComponent {
   specialityOptions: string[] = [];
   myControl = new FormControl('');
   filteredOptions: Observable<string[]>;
+  selectedLanguage:string | undefined;
 
   constructor(private DS: DoctorsService, private CS:CityService, private OS:OfferService, private SS:SpecialityService) {
      this.filteredOptions = new Observable();
   }
  
-
   SearchDoctor() {
     this.DS.getDoctor("Ahmed")
     // console.log(this.DS.doctors);

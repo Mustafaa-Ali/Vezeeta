@@ -29,7 +29,13 @@ import { OfferDetailsComponent } from './components/offer-details/offer-details.
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 // import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { fas } from '@fortawesome/free-solid-svg-icons';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
 
+export function httpTranslateLoaderFactory(http:HttpClient){
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json')
+}
 
 @NgModule({
   declarations: [
@@ -44,9 +50,6 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     SignInComponent,
     OfferDetailsComponent,
     
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -64,9 +67,17 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     MatInputModule,
     MatAutocompleteModule,
     CarouselModule,
-    provideDatabase(() => getDatabase())
+    provideDatabase(() => getDatabase()),
     // FontAwesomeModule,
-
+    HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage:'en',
+      loader:{
+        provide:TranslateLoader,
+        useFactory:httpTranslateLoaderFactory,
+        deps:[HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
