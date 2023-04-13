@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [dir]="'dir' | translate">
     <div class="row">
         <div class="col-7">
             <br>
@@ -9,19 +9,19 @@
             <div class="d-flex">
                 <span><img [src]="offersDetails.DoctorImg" class="doctorimg" alt="..."></span>&nbsp;
                 <div style="padding-top: 10px; padding-left: 5px;">
-                    <h6 class="docname">{{offersDetails.DoctorName}}</h6>
-                    <p class="doclocation">{{offersDetails.Address}}</p>
+                    <h6 class="docname">{{offersDetails.DoctorName | translate}}</h6>
+                    <p class="doclocation">{{offersDetails.Address | translate}}</p>
                 </div>
             </div><br>
             <div>
-                <h3>Description</h3>
-                <p>Terms & Conditions:</p>
-                <p>- To get the offer please book an appointment from the schedule above</p>
-                <p>- Examination fees are only paid in case of not doing the service</p>
+                <h3>{{'Description' | translate}}</h3>
+                <p>{{'Terms & Conditions:' | translate}}</p>
+                <p>- {{'To get the offer please book an appointment from the schedule above' | translate}}</p>
+                <p>- {{'Examination fees are only paid in case of not doing the service' | translate}}</p>
             </div>
             <div>
-                <h3>For your info</h3>
-                <p>{{offersDetails.Info}}</p>
+                <h3>{{'For your info' | translate}}</h3>
+                <p>{{offersDetails.Info | translate}}</p>
 
             </div>
 
@@ -31,20 +31,20 @@
         </div>
 
         <div class="col-4">
-            
+
             <div class="container">
-                <div class="sessionname">{{offersDetails.SessionName}}</div>
-                <div class="sessionnum">{{offersDetails.Num}}</div>
+                <div class="sessionname">{{offersDetails.SessionName | translate}}</div>
+                <div class="sessionnum">{{offersDetails.Num | translate}}</div>
 
                 <div class="pricecontainer">
                     <p class="priceinfo">{{offersDetails.PriceInfo}}</p>
                     <div class="pricebefore">
-                        {{offersDetails.PriceBefore}} EGP
+                        {{offersDetails.PriceBefore}} {{'EGP' | translate}}
                     </div>
                     <span class="price">
-                        {{offersDetails.Price}} EGP
+                        {{offersDetails.Price}} {{'EGP' | translate}}
                     </span>
-                    <span class="save">Save {{offersDetails.Save}} EGP</span>
+                    <span class="save">{{'Save' | translate}} {{offersDetails.Save | translate}} {{'EGP' | translate}}</span>
                 </div>
                 <hr>
                 <div class="p-2 justify-content-center">
@@ -59,7 +59,6 @@
                 <hr>
                 <div>
                     Location
-                    <!-- Location -->
 
                 </div>
             </div>
