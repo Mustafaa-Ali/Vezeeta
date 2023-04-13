@@ -7,21 +7,18 @@ export interface IOffer {
     DoctorName:string,
     ImgUrl:string,
     Location: string,
-    Price:any,
+    Price:number,
     SessionName:string,
     PriceBefore:number,
     Save:number,
     DoctorImg:string,
     Num:string,
-    Booked:any,
+    Booked:number,
     Views:number,
     Time:string,
     BookingsImg:string,
     ViewsImg:string,
     TimeImg:string
     Loc:number,
-    PriceInfo:string,
-    Address:string,
-    BookedString:string
-    SaveString:string
+    PriceInfo:string
 }

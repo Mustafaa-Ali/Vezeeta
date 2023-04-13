@@ -1,11 +1,15 @@
 export interface IDoctor {
+  [key: string]: any;
     id:string,
     Name?: string,
     City?: string,
-    imgUrl?: string,
+    ImgUrl?: string,
     Phone?: number,
     Speciality?: string,
     Location?: string,
-    BookingDate?: Date,
-    ExaminationFees?: number
+    BookingDate?: string,
+    ExaminationFees?: number,
+    Gender?:string,
+    Entity?:string,
+    Title?:string
 }
