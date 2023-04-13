@@ -10,7 +10,7 @@ import { ISpeciality } from 'src/app/models/ISpeciality';
 import { SpecialityService } from 'src/app/services/speciality.service';
 import { FormControl } from '@angular/forms';
 import {map, startWith} from 'rxjs/operators';
-
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -34,17 +34,17 @@ export class HomeComponent {
   specialityOptions: string[] = [];
   myControl = new FormControl('');
   filteredOptions: Observable<string[]>;
+  selectedLanguage:string | undefined;
 
   constructor(private DS: DoctorsService, private CS:CityService, private OS:OfferService, private SS:SpecialityService) {
      this.filteredOptions = new Observable();
   }
-
-
+ 
   SearchDoctor() {
-    this.DS.getDoctor(this.doctorName)
-
+    this.DS.getDoctor("Ahmed")
+    // console.log(this.DS.doctors);
     this.Doctor = this.DS.doctors;
-    console.log(this.Doctor);
+    console.log("this.Doctor");
   }
 
 
@@ -58,15 +58,15 @@ export class HomeComponent {
     this.offers = data;
     console.log("offerSlide1",data[0])
    for(let i = 0; i<4; i++) {
-
+   
     this.offerSlide1.push(data[i])
-
+    
   }
    for(let i = 4; i<data.length; i++) {
     this.offerSlide2.push(data[i])
-
+   
   }
-
+   
   console.log("one",this.offerSlide1)
   console.log("two",this.offerSlide2)
    })
@@ -74,22 +74,22 @@ export class HomeComponent {
     console.log("speciality",data);
     this.speciality = data;
     for(let i = 0; i<4; i++) {
-
+   
       this.specialityslide1.push(data[i])
-
+      
     }
      for(let i = 4; i<data.length; i++) {
       this.specialityslide2.push(data[i])
-
+     
     }
    })
 
 
 
+   
+    
 
-
-
-
+  
   }
 
 
@@ -100,11 +100,11 @@ export class HomeComponent {
   }
 
 
+  
 
-
-
+  
   getCities(){
-
+   
 
   }
 

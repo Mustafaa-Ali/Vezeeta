@@ -56,60 +56,85 @@ cursor: pointer;
                 </h2>
                 <div id="collapseOn" class="accordion-collapse collapse show" aria-labelledby="headingOn" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="flexCheckDefault" [(ngModel)]="TitleProfessor" (change)="onTitleChecked('Professor')">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Professor
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="flexCheckChecked" [(ngModel)]="TitleLecturer" (change)="onTitleChecked('Lecturer')">
-                      <label class="form-check-label" for="flexCheckChecked">
-                        Lecturer
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="flexCheckChecked" [(ngModel)]="TitleConsultant" (change)="onTitleChecked('Consultant')">
-                      <label class="form-check-label" for="flexCheckChecked">
-                        Consultant
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="flexCheckChecked" [(ngModel)]="TitleSpecialist" (change)="onTitleChecked('Specialist')">
-                      <label class="form-check-label" for="flexCheckChecked">
-                        Specialist
-                      </label>
-                    </div>
-
-
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefa fault">
+                          <label class="form-check-label" for="flexCheckDefa fault">
+                            Professor
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                          <label class="form-check-label" for="flexCheckChecked">
+                            Lecturer
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                          <label class="form-check-label" for="flexCheckChecked">
+                            Consultant
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                          <label class="form-check-label" for="flexCheckChecked">
+                            Specialist
+                          </label>
+                        </div>
                        </div>
                 </div>
               </div>
               <div class="accordion-item">
                 <h2 class="accordion-header" id="headingO">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseO" aria-expanded="true" aria-controls="collapseO">
-                    <i class="fa fa-solid fa fa-venus-mars"></i>&nbsp; Gender
+                      <i class="fa fa-solid fa fa-venus-mars"></i>&nbsp; Gender
                   </button>
                 </h2>
                 <div id="collapseO" class="accordion-collapse collapse show" aria-labelledby="headingO" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Female" [(ngModel)]="genderFemale" (change)="onCheckboxChange('female')">
-                      <label class="form-check-label" for="femaleCheckbox">
-                        Female
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Male" id="maleCheckbox" [(ngModel)]="genderMale" (change)="onCheckboxChange('male')">
-                      <label class="form-check-label" for="maleCheckbox">
-                        Male
-                      </label>
-                    </div>
-                  </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefa fault">
+                          <label class="form-check-label" for="flexCheckDefa fault">
+                            Femal
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                          <label class="form-check-label" for="flexCheckChecked">
+                            Male
+                          </label>
+                        </div>
+                       </div>
                 </div>
               </div>
-
-
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne1">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+                      <i class="fa fa-solid fa fa-calendar-days"></i>&nbsp;   Availability
+                  </button>
+                </h2>
+                <div id="collapseOne1" class="accordion-collapse collapse show" aria-labelledby="headingOne1" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefa fault">
+                          <label class="form-check-label" for="flexCheckDefa fault">
+                            Any day
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                          <label class="form-check-label" for="flexCheckChecked">
+                            Today
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                          <label class="form-check-label" for="flexCheckChecked">
+                            Tomorrow
+                          </label>
+                        </div>
+                       </div>
+                </div>
+              </div>
               <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne2">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
@@ -119,25 +144,24 @@ cursor: pointer;
                 </h2>
                 <div id="collapseOne2" class="accordion-collapse collapse show" aria-labelledby="headingOne2" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" [(ngModel)]="anyPriceFilter" (change)="checkAnyPriceFilter()">
-                      <label class="form-check-label">
-                        Any
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" [(ngModel)]="priceFilterLess300" (change)="checkPriceFilters('less300')">
-                      <label class="form-check-label">
-                        Less than 300
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" [(ngModel)]="priceFilterFrom100to200" (change)="checkPriceFilters('from100to200')">
-                      <label class="form-check-label">
-                        From 100 to 200
-                      </label>
-                    </div>
-
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefa fault">
+                          <label class="form-check-label" for="flexCheckDefa fault">
+                            Any
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                          <label class="form-check-label" for="flexCheckChecked">
+                            Less than 50
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                          <label class="form-check-label" for="flexCheckChecked">
+                            From 50 to 100
+                          </label>
+                        </div>
                        </div>
                 </div>
               </div>
@@ -150,19 +174,18 @@ cursor: pointer;
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" [(ngModel)]="EntityHospital" (change)="checkEntities('hospital')">
-                      <label class="form-check-label" for="flexCheckDefa fault">
-                        Hospital
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" [(ngModel)]="EntityClinic" (change)="checkEntities('clinic')">
-                      <label class="form-check-label" for="flexCheckChecked">
-                        Clinic
-                      </label>
-                    </div>
-
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefa fault">
+                          <label class="form-check-label" for="flexCheckDefa fault">
+                            Hospital
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                          <label class="form-check-label" for="flexCheckChecked">
+                            Clinic
+                          </label>
+                        </div>
                          </div>
                 </div>
               </div>
@@ -170,11 +193,11 @@ cursor: pointer;
             </div>
       </div>
   <section  class="col-lg-9 col-sm-12">
-    <div id="res1" class="row bg-white rounded-3 m-3 p-3 d-flex" *ngFor="let doctor of filterDoctors(doctors)">
-     <div class="col-lg-3 col-sm-12"> <img [src]="doctor.ImgUrl" style="border-radius:50%"></div>
+    <div id="res1" class="row bg-white rounded-3 m-3 p-3 d-flex">
+     <div class="col-lg-3 col-sm-12"> <img src="./doctor-fa fadia-moris-nephrology_20200702092702090 (1).jpg" style="border-radius:50% ;"></div>
      <div class="col-lg-5 col-sm-12 ">
-     <h3 style="color: #0070cd;"> <span style="font-size: small;">{{doctor.Name}}</span></h3>
-       <h5 style="color: gray;">{{doctor.Speciality}}</h5>
+     <h3 style="color: #0070cd;"> <span style="font-size: small;">Doctor</span> Sara Ahmed</h3>
+       <h5 style="color: gray;">Consultant of Internal Medicine Kasr Alainy</h5>
        <div class="mb-2">
        <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
        <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
@@ -189,46 +212,125 @@ cursor: pointer;
       </div>
       <div class="iconDiv">
       <div><i class="fa fa-solid fa fa-stethoscope"></i>&nbsp; Psychiatrist Specialized in Adult Psychiatry</div>
-      <div><i class="fa fa-solid fa-compass"></i>&nbsp; {{doctor.Location}}</div>
-      <div><i class="fa fa-solid fa fa-money-bill-wave"></i>&nbsp; Fees : {{doctor.ExaminationFees}} EGP</div>
+      <div><i class="fa fa-solid fa-compass"></i>&nbsp; El-Haram : El Haram Main Street</div>
+      <div><i class="fa fa-solid fa fa-money-bill-wave"></i>&nbsp; Fees : 250 EGP</div>
       <div><i class="fa fa-solid fa fa-clock"></i>&nbsp; Waiting Time : 23 Minutes</div>
       <div><i class="fa fa-solid fa fa-phone"></i>&nbsp; 16676 - Cost of regular call</div>
       </div>
 
   </div>
-  <div class="col-lg-4" >
-    <div>
-      <mbsc-datepicker
-      [controls]="['calendar']"
-      calendarType="week"
-      min="today"
-      max="2050-01"
-      display="inline"
-      [(ngModel)]="dateSelected"
-      returnFormat="iso8601">
+  <div class="col-lg-4">
+    <div class="row">
+      <div id="btn1" class="col-4">
+        <div class="btn-primary rounded-2 btn ">Date</div>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <button class="btn btn-danger ">Book</button>
+      </div>
+      <div id="btn1" class="col-4">
+        <div class="btn-primary rounded-2 btn ">Date</div>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <button class="btn btn-danger ">Book</button>
+      </div>
+      <div id="btn1" class="col-4">
+        <div class="btn-primary rounded-2 btn ">Date</div>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <button class="btn btn-danger ">Book</button>
+      </div>
 
-  </mbsc-datepicker>
-    </div>
-    <div class="mb-2">
-      <mbsc-datepicker
-      [controls]="['timegrid']"
-      min="11:00"
-      max="19:30"
-      display="inline"
-      [(ngModel)]="timeSelected"
-      returnFormat="iso8601">
 
-  </mbsc-datepicker>
-    </div>
-
-    <div class="btn btn-danger " style="width: 100%;" (click)="bookAppointments(doctor?.Name||'',doctor?.ImgUrl||'',doctor?.Speciality||'',dateSelected,timeSelected,doctor?.ExaminationFees?.toString()||'',doctor?.Location||'',doctor?.Phone?.toString()||'')">Book</div>
-
+      </div>
   </div>
   </div>
+    <div id="res1" class="row bg-white rounded-3 m-3 p-3 d-flex">
+     <div class="col-lg-3 col-sm-12"> <img src="./src/assets/doctor-fa fadia-moris-nephrology_20200702092702090 (1).jpg" style="border-radius:50% ;"></div>
+     <div class="col-lg-5 col-sm-12 ">
+     <h3 style="color: #0070cd;"> <span style="font-size: small;">Doctor</span> Sara Ahmed</h3>
+       <h5 style="color: gray;">Consultant of Internal Medicine Kasr Alainy</h5>
+       <div class="mb-2">
+       <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
+       <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
+       <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
+       <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
+       </div>
+
+       <div  id="sp" class="BadgesContainer mb-2 ">
+       <span class="rounded-5 bg-primary text-white p-2 m-2" ><i class="fa fa-solid fa fa-stethoscope"></i>&nbsp; Hygiene</span>
+       <span class="rounded-5 bg-primary text-white p-2 m-2"><i class="fa fa-solid fa fa-ear-listen"></i>&nbsp; Good Listener</span>
+       <span class="rounded-5 bg-primary text-white p-2 m-2"> <i class="fa fa-solid fa fa-comment-dots"></i>&nbsp; Informative</span>
+      </div>
+      <div class="iconDiv">
+      <div><i class="fa fa-solid fa fa-stethoscope"></i>&nbsp; Psychiatrist Specialized in Adult Psychiatry</div>
+      <div><i class="fa fa-solid fa-compass"></i>&nbsp; El-Haram : El Haram Main Street</div>
+      <div><i class="fa fa-solid fa fa-money-bill-wave"></i>&nbsp; Fees : 250 EGP</div>
+      <div><i class="fa fa-solid fa fa-clock"></i>&nbsp; Waiting Time : 23 Minutes</div>
+      <div><i class="fa fa-solid fa fa-phone"></i>&nbsp; 16676 - Cost of regular call</div>
+      </div>
+
+  </div>
+  <div class="col-lg-4">
+    <div class="row">
+      <div id="btn1" class="col-4">
+        <div class="btn-primary rounded-2 btn ">Date</div>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <button class="btn btn-danger ">Book</button>
+      </div>
+      <div id="btn1" class="col-4">
+        <div class="btn-primary rounded-2 btn ">Date</div>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <button class="btn btn-danger ">Book</button>
+      </div>
+      <div id="btn1" class="col-4">
+        <div class="btn-primary rounded-2 btn ">Date</div>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <span>3:00 PM</span>
+        <button class="btn btn-danger ">Book</button>
+      </div>
 
 
-
-
+      </div>
+  </div>
+  </div>
 
   </section>
 
@@ -236,31 +338,5 @@ cursor: pointer;
   </div>
 
    </section>
-   <!-- <section>
-    <label>
-      <input type="checkbox" [(ngModel)]="selectedGender" id="Male" value="Male" (change)="filterDoctors()"> Male
-    </label>
 
-    <label>
-      <input type="checkbox" [(ngModel)]="maxPriceFilter" value="true" (change)="filterDoctors()"> Price less than 300
-    </label>
-    <label>
-      <input type="checkbox" [(ngModel)]="maxPriceFilter2" value="true" (change)="filterDoctors()">  350
-    </label>
 
-    <div *ngFor="let doctor of filteredDoctors | async">
-      {{ doctor.Name }}
-    </div>
-  </section> -->
-  <!-- <ng-container *ngFor="let doctor of (doctors | filter: gender: price | sort: sortBy)">
-    <p>{{doctor.Name}}</p>
-  </ng-container> -->
-  <!-- <label>
-    <input type="checkbox" [(ngModel)]="genderMale" name="gender"> Filter by gender
-  </label>
-  <label>
-    <input type="checkbox" [(ngModel)]="priceFilter" name="price"> Price less than 300
-  </label>
-  <div *ngFor="let doctor of filterDoctors(doctors)">
-    <p>{{ doctor.Name }} ({{ doctor.Gender }})</p>
-  </div> -->

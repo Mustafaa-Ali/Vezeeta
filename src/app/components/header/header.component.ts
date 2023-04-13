@@ -1,36 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  userLogged!: boolean;
+  userLogged:boolean;
+  currentLang:string | undefined;
 
-  constructor(private authService: AuthService) {}
-
-  ngOnInit(): void {
-    this.authService.getLoggedStatus().subscribe((loggedIn: boolean) => {
-      this.userLogged = loggedIn;
-    });
+  constructor(private AuthService:AuthService,public translateservice:TranslateService) {
+    this.userLogged=this.AuthService.userLoggedState;
+    this.currentLang = localStorage.getItem('currentLang') || 'en';
+    this.translateservice.use(this.currentLang)
   }
+  
+  changeCurrentLang(lang:string){
+    this.translateservice.use(lang)
+    localStorage.setItem('currentLang',lang)
+  }
+  
+  ngOnInit(): void {
+    this.AuthService.getLoggedStatus().subscribe(result=>{
+      this.userLogged=result;
+      // console.log(this.userLogged);
 
+    })
 
-      onLogout(){
-        this.authService.logout()
-    }
-
-
-    switchLanguage() {
-      const lang = document.documentElement.lang;
-      if (lang === 'en') {
-        document.documentElement.lang = 'ar';
-      } else {
-        document.documentElement.lang = 'en';
       }
-      location.reload();
+      
+      onLogout(){
+        this.AuthService.logout()
     }
-
 }

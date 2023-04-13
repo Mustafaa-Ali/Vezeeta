@@ -3,7 +3,7 @@ import { collection, query, where, getDocs, Firestore } from '@angular/fire/fire
 import { Injectable } from '@angular/core';
 import { collectionData } from '@angular/fire/firestore';
 // import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,18 +11,13 @@ import { Observable, map } from 'rxjs';
 export class DoctorsService {
   doctors: IDoctor[] = []
 
-  constructor(private firestore: Firestore) {}
+  constructor(private firestore: Firestore) { }
 
-  // getDoctors() {
-  //   let doctorRef = collection(this.firestore, "Doctor")
-  //   return collectionData(doctorRef, { idField: "id" }) as Observable<IDoctor[]>
-  // }
-  getDoctors(): Observable<IDoctor[]> {
-    const doctorRef = collection(this.firestore, "Doctor");
-    return collectionData(doctorRef, { idField: "id" }) as Observable<IDoctor[]>;
+  getDoctors() {
+    let doctorRef = collection(this.firestore, "Doctor")
+    return collectionData(doctorRef, { idField: "id" }) as Observable<IDoctor[]>
   }
-  async getDoctor(name: any) {
-   this.doctors  = []
+  async getDoctor(name: string) {
     let doctorRef = collection(this.firestore, "Doctor")
     const q = query(doctorRef, where("Name", "==", name));
 
@@ -31,23 +26,9 @@ export class DoctorsService {
       // doc.data() is never undefined for query doc snapshots
       // console.log(doc.id, " => ", doc.data());
       this.doctors.push(doc.data() as IDoctor);
-
+      
       console.log(this.doctors);
     });
     return this.doctors;
   }
-  getDoctorByGender(genders: string[]): Observable<IDoctor[]> {
-    let doctorRef = collection(this.firestore, "Doctor");
-    const q = query(doctorRef, where("Gender", "in", genders));
-    return collectionData(q, { idField: "id" }) as Observable<IDoctor[]>;
-
-}
-getDoctorByPriceLessThan300(): Observable<IDoctor[]> {
-  let doctorRef = collection(this.firestore, "Doctor");
-  const q = query(doctorRef, where("ExaminationFees", "<", 300));
-
-  return collectionData(q, { idField: "id" }) as Observable<IDoctor[]>;
-}
-
-
 }
