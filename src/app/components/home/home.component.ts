@@ -34,6 +34,7 @@ export class HomeComponent {
   specialityOptions: string[] = [];
   myControl = new FormControl('');
   filteredOptions: Observable<string[]>;
+  selectedLanguage:string | undefined;
 
   constructor(private DS: DoctorsService, private CS:CityService, private OS:OfferService, private SS:SpecialityService) {
      this.filteredOptions = new Observable();
