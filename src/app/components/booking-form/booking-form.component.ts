@@ -36,6 +36,7 @@ export class BookingFormComponent implements OnInit {
   mobile: string=''
   email: string=''
   notes: string=''
+  doctorID:any
   // bookings$!: Observable<any[]>;
 
 
@@ -53,7 +54,7 @@ export class BookingFormComponent implements OnInit {
 
   }
 
-  async addBooking() {
+  async addBooking(doctorID: string) {
     try {
       const user = await this.authservice.getFireAuth().authState.pipe(take(1)).toPromise();
       if (!user) {
@@ -61,8 +62,15 @@ export class BookingFormComponent implements OnInit {
         return;
       }
 
+      const bookingRef = await this.firestore.collection('bookings').ref.where('doctorID', '==', doctorID).where('dateSelected', '==', this.dateSelected).where('timeSelected', '==', this.timeSelected).get();
+      if (bookingRef.docs.length > 0) {
+        console.error('Booking already exists for this date and time');
+        return;
+      }
+
       const booking = {
-        doctor:this.doctorName,
+        doctorID: doctorID,
+        doctor: this.doctorName,
         name: this.name,
         mobile: this.mobile,
         email: this.email,
@@ -85,6 +93,7 @@ export class BookingFormComponent implements OnInit {
     }
     this.bookAppointments(this.doctorName,this.ImgUrl,this.Speciality,this.dateSelected,this.timeSelected,this.ExaminationFees,this.Location,this.Phone,this.name)
   }
+
 
 
   bookAppointments(doctorName: string,ImgUrl:string,Speciality:string,dateSelected:string,timeSelected:string,ExaminationFees:string,Location:string,Phone:string,name:string) {
@@ -114,7 +123,10 @@ export class BookingFormComponent implements OnInit {
       this.timeSelected=params['timeSelected'];
       this.ExaminationFees=params['ExaminationFees'];
       this.Location=params['Location'];
-      this.Phone=params['Phone']
+      this.Phone=params['Phone'];
+      this.doctorID=params['doctorID'];
+      console.log(this.doctorID);
+
 
 
     });

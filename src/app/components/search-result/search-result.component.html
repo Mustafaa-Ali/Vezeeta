@@ -199,15 +199,15 @@ cursor: pointer;
   <div class="col-lg-4" >
     <div>
       <mbsc-datepicker
-      [controls]="['calendar']"
-      calendarType="week"
-      min="today"
-      max="2050-01"
-      display="inline"
-      [(ngModel)]="dateSelected"
-      returnFormat="iso8601">
-
-  </mbsc-datepicker>
+  [controls]="['calendar']"
+  calendarType="week"
+  min="today"
+  max="2050-01"
+  display="inline"
+  [(ngModel)]="doctor['dateSelected']"
+  (onChange)="updateAppointment(doctor, doctor['dateSelected'], doctor['timeSelected'])"
+  returnFormat="iso8601">
+</mbsc-datepicker>
     </div>
     <div class="mb-2">
       <mbsc-datepicker
@@ -215,13 +215,13 @@ cursor: pointer;
       min="11:00"
       max="19:30"
       display="inline"
-      [(ngModel)]="timeSelected"
+      [(ngModel)]="doctor['timeSelected']"
+      (onChange)="updateAppointment(doctor, doctor['dateSelected'], doctor['timeSelected'])"
       returnFormat="iso8601">
-
-  </mbsc-datepicker>
+    </mbsc-datepicker>
     </div>
 
-    <div class="btn btn-danger " style="width: 100%;" (click)="bookAppointments(doctor?.Name||'',doctor?.ImgUrl||'',doctor?.Speciality||'',dateSelected,timeSelected,doctor?.ExaminationFees?.toString()||'',doctor?.Location||'',doctor?.Phone?.toString()||'')">Book</div>
+    <div class="btn btn-danger " style="width: 100%;" (click)="bookAppointments(doctor?.Name||'',doctor?.ImgUrl||'',doctor?.Speciality||'',dateSelected,timeSelected,doctor?.ExaminationFees?.toString()||'',doctor?.Location||'',doctor?.Phone?.toString()||'',doctor.id)">Book</div>
 
   </div>
   </div>

@@ -24,12 +24,13 @@ export class SearchResultComponent implements OnInit{
   doctor!: IDoctor;
   selectedDate!: Date;
   name:string=""
-  dateSelected:string=''
+  dateSelected:any
   timeSelected:string=''
   gender: string = '';
   speciality: string=''
   public price!: number;
   public sortBy!: string;
+  selectedDates:any
 
   constructor (private route: ActivatedRoute,private DS: DoctorsService,private firestore: Firestore,private fb: FormBuilder, private router:Router,private http:HttpClient, private firestore2:AngularFirestore,private filterPipe: FilterPipe) {
     this.DS.getDoctors().subscribe(doctors => {
@@ -40,11 +41,8 @@ export class SearchResultComponent implements OnInit{
   }
 
 
-  // tobook(){
-  //   this.bookAppointments()
-  // }
 
-  bookAppointments(doctorName: string,ImgUrl:string,Speciality:string,dateSelected:string,timeSelected:string,ExaminationFees:string,Location:string,Phone:string) {
+  bookAppointments(doctorName: string,ImgUrl:string,Speciality:string,dateSelected:string,timeSelected:string,ExaminationFees:string,Location:string,Phone:string,doctorID:string) {
     this.router.navigate(['/bookingForm'], {
       queryParams: {
         doctorName: doctorName,
@@ -54,7 +52,8 @@ export class SearchResultComponent implements OnInit{
         timeSelected:timeSelected,
         ExaminationFees:ExaminationFees,
         Location:Location,
-        Phone:Phone
+        Phone:Phone,
+        doctorID:doctorID
 
       }
     });
@@ -87,6 +86,10 @@ export class SearchResultComponent implements OnInit{
 
   }
 
+  updateAppointment(doctor: any, dateSelected: any, timeSelected: any) {
+    this.dateSelected=doctor['dateSelected'] = dateSelected;
+   this.timeSelected= doctor['timeSelected'] = timeSelected;
+  }
 
 
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/compat/auth'
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import {Router} from '@angular/router';
 import { BehaviorSubject, Observable, of, switchMap } from 'rxjs';
 
@@ -11,7 +12,7 @@ export class AuthService {
   private isUserLoggedSubject: BehaviorSubject<boolean>;
   private fireauth: AngularFireAuth;
 
-  constructor(fireauth: AngularFireAuth, private router: Router) {
+  constructor(fireauth: AngularFireAuth, private router: Router ,private firestore: AngularFirestore) {
     this.fireauth = fireauth;
     this.isUserLoggedSubject = new BehaviorSubject<boolean>(this.isLoggedIn());
     this.fireauth.authState.subscribe(user => {
@@ -45,16 +46,27 @@ export class AuthService {
       });
   }
 
-  register(email: string, password: string) {
+  register(email: string, password: string, iAdmin: boolean) {
     this.fireauth.createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // User registration successful, now store additional data in Firestore
+        const uid = userCredential.user!.uid;
+        return this.firestore.collection('users').doc(uid).set({
+          iAdmin: iAdmin
+        });
+      })
       .then(() => {
+        // User data stored successfully
         alert('Registration Successful');
         this.router.navigate(['/signIn']);
-      }, err => {
-        alert(err.message);
+      })
+      .catch((error) => {
+        // Handle registration and data storage errors
+        alert(error.message);
         this.router.navigate(['/SignUp']);
       });
   }
+
 
   logout() {
     this.fireauth.signOut()
