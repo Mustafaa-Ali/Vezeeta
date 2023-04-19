@@ -197,7 +197,7 @@ cursor: pointer;
 
   </div>
   <div class="col-lg-4" >
-    <div>
+    <!-- <div>
       <mbsc-datepicker
   [controls]="['calendar']"
   calendarType="week"
@@ -219,7 +219,7 @@ cursor: pointer;
       (onChange)="updateAppointment(doctor, doctor['dateSelected'], doctor['timeSelected'])"
       returnFormat="iso8601">
     </mbsc-datepicker>
-    </div>
+    </div> -->
 
     <div class="btn btn-danger " style="width: 100%;" (click)="bookAppointments(doctor?.Name||'',doctor?.ImgUrl||'',doctor?.Speciality||'',dateSelected,timeSelected,doctor?.ExaminationFees?.toString()||'',doctor?.Location||'',doctor?.Phone?.toString()||'',doctor.id)">Book</div>
 

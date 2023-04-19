@@ -37,7 +37,7 @@
                 <div class="sessionnum">{{offersDetails.Num | translate}}</div>
 
                 <div class="pricecontainer">
-                    <p class="priceinfo">{{offersDetails.PriceInfo}}</p>
+                    <p class="priceinfo">{{offersDetails.PriceInfo | translate}}</p>
                     <div class="pricebefore">
                         {{offersDetails.PriceBefore}} {{'EGP' | translate}}
                     </div>
@@ -48,12 +48,12 @@
                 </div>
                 <hr>
                 <div class="p-2 justify-content-center">
-                    <span class="icons"><img [src]="offersDetails.BookingsImg" class="offericon" alt=""><span
-                            class="iconfont"> {{offersDetails.Booked}} Bookings </span></span>
-                    <span class="icons"><img [src]="offersDetails.ViewsImg" class="offericon" alt=""><span
-                            class="iconfont"> {{offersDetails.Views}} Views </span></span>
-                    <span class="icons"><img [src]="offersDetails.TimeImg" class="offericon" alt=""><span
-                            class="iconfont"> {{offersDetails.Time}} </span></span>
+                    <span class="icons"><img src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/25556/_next/static/images/group-16@3x.png" class="offericon" alt=""><span
+                            class="iconfont"> {{offersDetails.Booked}} {{'Bookings' | translate}} </span></span>
+                    <span class="icons"><img src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/25556/_next/static/images/view@3x.png" class="offericon" alt=""><span
+                            class="iconfont"> {{offersDetails.Views}} {{'Views' | translate}} </span></span>
+                    <span class="icons"><img src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/25556/_next/static/images/clock-circular-outline@3x.png" class="offericon" alt=""><span
+                            class="iconfont"> {{offersDetails.Time | translate}} </span></span>
 
                 </div>
                 <hr>
@@ -61,6 +61,7 @@
                     Location
 
                 </div>
+                <div id="payments"></div>
             </div>
         </div>
     </div>
