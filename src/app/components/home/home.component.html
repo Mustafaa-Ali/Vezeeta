@@ -399,7 +399,7 @@
                         <div class="tele-content d-block">
                             <h3>{{'Home Visit' | translate}}</h3>
                             <p>{{'Choose the specialty, and the doctor will visit you at home.' | translate}}</p>
-                            <a>{{'Book a visit' | translate}}<i class="fas fa-angle-right text-danger"></i></a>
+                            <a routerLink="/homevisit">{{'Book a visit' | translate}}<i class="fas fa-angle-right text-danger"></i></a>
 
                         </div>
                     </div>
@@ -425,11 +425,11 @@
         <div>
             <div id="slider-one" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active" >
 
                         <div class="row ">
-                            <div class="col-lg-3 col-6" *ngFor="let off of offerSlide1 let i=index">
-                                <div class="p-1 text-start position-relative">
+                            <div class="col-lg-3 col-6" *ngFor="let off of offerSlide1 let i=index"  >
+                                <div class="p-1 text-start position-relative" (click)="goToDetails(off.id)">
                                     <span class="off">{{off.Discount}}% {{'OFF' | translate }}</span>
                                     <img src={{off.ImgUrl}} width="" alt="">
                                     <h4>{{off.SessionName | translate}}</h4>
@@ -448,7 +448,7 @@
 
                         <div class="row ">
                             <div class="col-lg-3 col-6" *ngFor="let off2 of offerSlide2 let i=index">
-                                <div class="p-1 text-start position-relative">
+                                <div class="p-1 text-start position-relative" (click)="goToDetails(off2.id)">
                                     <span class="off">{{off2.Discount}}% {{'OFF' | translate }}</span>
                                     <img src={{off2.ImgUrl}} width="" alt="">
                                     <h4>{{off2.SessionName | translate}}</h4>

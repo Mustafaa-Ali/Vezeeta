@@ -10,6 +10,7 @@ import { ISpeciality } from 'src/app/models/ISpeciality';
 import { SpecialityService } from 'src/app/services/speciality.service';
 import { FormControl } from '@angular/forms';
 import {map, startWith} from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -34,8 +35,9 @@ export class HomeComponent {
   specialityOptions: string[] = [];
   myControl = new FormControl('');
   filteredOptions: Observable<string[]>;
+  
 
-  constructor(private DS: DoctorsService, private CS:CityService, private OS:OfferService, private SS:SpecialityService) {
+  constructor(private DS: DoctorsService, private CS:CityService, private OS:OfferService, private SS:SpecialityService,private router:Router) {
      this.filteredOptions = new Observable();
   }
 
@@ -84,12 +86,7 @@ export class HomeComponent {
     }
    })
 
-
-
-
-
-
-
+   
   }
 
 
@@ -106,6 +103,13 @@ export class HomeComponent {
   getCities(){
 
 
+  }
+
+  goToDetails(id:any){
+    this.router.navigate(['OfferDetails',id])
+
+    console.log(id);
+    
   }
 
 }

@@ -14,6 +14,7 @@ import { OfferDetailsComponent } from './components/offer-details/offer-details.
 import { BookingFormComponent } from './components/booking-form/booking-form.component';
 import { ThanksSubmitComponent } from './components/thanks-submit/thanks-submit.component';
 import { MyAppointmentsComponent } from './components/my-appointments/my-appointments.component';
+import { HomevisitComponent } from './homevisit/homevisit.component';
 
 const routes: Routes = [
 
@@ -31,6 +32,7 @@ const routes: Routes = [
    {path:'thanks',component:ThanksSubmitComponent},
    {path:'myAppointments',component:MyAppointmentsComponent},
    {path:'OfferDetails/:id',component:OfferDetailsComponent,canActivate:[AuthGuardGuard]},
+   {path:'homevisit',component:HomevisitComponent,canActivate:[AuthGuardGuard]},
 ];
 
 @NgModule({

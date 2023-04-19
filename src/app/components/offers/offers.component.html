@@ -158,7 +158,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class=" col-sm-12 col-md-6 col-lg-4 p-1 " *ngFor="let x of offers">
-                <div class="card">
+                <div class="card" (click)="goToDetails(x.id)">
                     <div class="dr-name" style="margin-bottom: 17px;">
 
                         <img [src]="x.ImgUrl" class="card-img-top" alt="...">
@@ -195,7 +195,7 @@
                                 <div id="price" style="font-size: 20px;color:rgb(0, 112, 205);">{{x.Price}} {{'EGP' | translate}}</div>
                                 <button id="btn" type="button" class="btn btn-primary"
                                     style="line-height: 20px; font-size: 14px;"
-                                    (click)="goToDetails(x.id)">{{'Book' | translate}}</button>
+                                    >{{'Book' | translate}}</button>
                             </div>
                         </div>
                     </div><br>
