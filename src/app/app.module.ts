@@ -52,6 +52,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { HomevisitComponent } from './homevisit/homevisit.component';
 import { TeleconsultationComponent } from './teleconsultation/teleconsultation.component';
+import { MedicalQuestionComponent } from './medical-question/medical-question.component';
 
 export function httpTranslateLoaderFactory(http:HttpClient){
   return new TranslateHttpLoader(http,'./assets/i18n/','.json')
@@ -78,6 +79,7 @@ export function httpTranslateLoaderFactory(http:HttpClient){
     SortPipe,
     HomevisitComponent,
     TeleconsultationComponent,
+    MedicalQuestionComponent,
 
 
 
