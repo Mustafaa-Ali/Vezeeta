@@ -225,7 +225,7 @@
     "Sohag":"سوهاج",
     "Street":"شارع",
     "Building":"مبنى",
-    "Clinic Number":"تليفون العيادة",
+    "Clinic / Hospital / Center Number":"تليفون مكان العمل",
     "Examination Fee":"سعر الكشف",
     "About You":"نبذة عنك",
     "have already an account?":"لديك حساب بالفعل؟",
@@ -241,7 +241,13 @@
     "Search for specialty, doctor or hospital":"ابحث بالتخصص او دكتور او مستشفى",
     "Brwose Doctor":"اعرض الدكتور",
     "Or call":"او اتصل ب",
-    "Search":"ابحث"
+    "Search":"ابحث",
+    "Name":"الاسم",
+    "Title":"اللقب",
+    "Gender":"النوع",
+    "Entity":"المكان",
+    "Clinic":"عيادة",
+    "Image URL":"رابط الصورة"
     
 
 }
