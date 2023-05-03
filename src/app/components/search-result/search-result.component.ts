@@ -1,7 +1,7 @@
 import { DoctorsService } from 'src/app/services/doctors.service';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { IDoctor } from './../../models/IDoctor';
-import { Observable, map } from 'rxjs';
+import { Observable, from, map } from 'rxjs';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Firestore, Timestamp, addDoc, collection } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -20,7 +20,7 @@ import { FilterPipe } from 'src/app/Pipes/filter.pipe';
 })
 
 export class SearchResultComponent implements OnInit{
-  doctors: IDoctor[] = []
+  doctors: IDoctor[]=[]
   doctor!: IDoctor;
   selectedDate!: Date;
   name:string=""
@@ -31,25 +31,32 @@ export class SearchResultComponent implements OnInit{
   public price!: number;
   public sortBy!: string;
   selectedDates:any
+  currentPage = 1;
+  itemsPerPage = 2;
+  doctorName:string=''
+  selectedSpeciality:string=''
+  selectedCity:string=''
 
   constructor (private route: ActivatedRoute,private DS: DoctorsService,private firestore: Firestore,private fb: FormBuilder, private router:Router,private http:HttpClient, private firestore2:AngularFirestore,private filterPipe: FilterPipe) {
-    this.DS.getDoctors().subscribe(doctors => {
-      this.doctors = doctors;
-      // this.doctor=doctors;
-      console.log(this.doctors);
-    });
+    this.doctorName=this.DS.sharedName
+    this.selectedCity=this.DS.sharedCity
+    this.selectedSpeciality=this.DS.sharedSpeciality
+    console.log(this.doctorName);
+    console.log("SPE",this.selectedSpeciality);
+    console.log("city",this.selectedCity);
+
+
   }
 
 
 
-  bookAppointments(doctorName: string,ImgUrl:string,Speciality:string,dateSelected:string,timeSelected:string,ExaminationFees:string,Location:string,Phone:string,doctorID:string) {
+  bookAppointments(doctorName: string,ImgUrl:string,Speciality:string,dateSelected:string,ExaminationFees:string,Location:string,Phone:string,doctorID:string) {
     this.router.navigate(['/bookingForm'], {
       queryParams: {
         doctorName: doctorName,
         ImgUrl:ImgUrl,
         Speciality:Speciality,
         dateSelected:dateSelected,
-        timeSelected:timeSelected,
         ExaminationFees:ExaminationFees,
         Location:Location,
         Phone:Phone,
@@ -63,16 +70,7 @@ export class SearchResultComponent implements OnInit{
 
 
 
-  // async search(name: string) {
-  //   this.doctors = await this.DS.getDoctor(name);
-  //   console.log(this.doctors);
 
-  // }
-  // async search(name: string) {
-  //   this.doctors = await this.DS.getDoctor(name);
-  //   console.log(this.doctors);
-
-  // }
 
 
 
@@ -84,14 +82,21 @@ export class SearchResultComponent implements OnInit{
   ngOnInit(): void {
 
 
+
+
+    this.DS.getDoctor(this.doctorName,this.selectedSpeciality,this.selectedCity).then((doctors) => {
+      this.doctors = doctors;
+      console.log("NNN",this.doctors);
+
+    });
+
+
   }
 
-  updateAppointment(doctor: any, dateSelected: any, timeSelected: any) {
+  updateAppointment(doctor: any, dateSelected: any) {
     this.dateSelected=doctor['dateSelected'] = dateSelected;
-   this.timeSelected= doctor['timeSelected'] = timeSelected;
+
   }
-
-
 
 
 

@@ -37,6 +37,7 @@ export class BookingFormComponent implements OnInit {
   email: string=''
   notes: string=''
   doctorID:any
+  status:string='wait'
   // bookings$!: Observable<any[]>;
 
 
@@ -62,7 +63,7 @@ export class BookingFormComponent implements OnInit {
         return;
       }
 
-      const bookingRef = await this.firestore.collection('bookings').ref.where('doctorID', '==', doctorID).where('dateSelected', '==', this.dateSelected).where('timeSelected', '==', this.timeSelected).get();
+      const bookingRef = await this.firestore.collection('bookings').ref.where('doctorID', '==', doctorID).where('dateSelected', '==', this.dateSelected).get();
       if (bookingRef.docs.length > 0) {
         console.error('Booking already exists for this date and time');
         return;
@@ -77,7 +78,9 @@ export class BookingFormComponent implements OnInit {
         notes: this.notes,
         userUid: user.uid,
         dateSelected: this.dateSelected,
-        timeSelected: this.timeSelected
+        status:this.status
+
+
       };
 
       await this.firestore.collection('bookings').add(booking);

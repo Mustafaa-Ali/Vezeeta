@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, Renderer2 } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+
 @Component({
   selector: 'app-homevisit',
   templateUrl: './homevisit.component.html',
@@ -16,9 +20,24 @@ export class HomevisitComponent {
     medicalSpeciality: new FormControl('', Validators.required),
     notes: new FormControl('')
   });
+
+  constructor(private firestore: AngularFirestore , private modalService: NgbModal , private renderer: Renderer2, private formBuilder: FormBuilder
+
+    ) {}
+
   onSubmit() {
-    
-    
+    if (this.appointmentForm.valid) {
+      const formData = this.appointmentForm.value;
+      this.firestore.collection('homevisits').add(formData)
+        .then(() => {
+          console.log('Form data saved successfully!');
+          this.appointmentForm.reset();
+        })
+        .catch((error) => {
+          console.error('Error saving form data: ', error);
+        });
+    }
+
   }
 
 }

@@ -47,13 +47,17 @@ export class AuthService {
       });
   }
 
-  register(email: string, password: string, iAdmin: boolean) {
+  register(email: string, password: string, iAdmin: boolean,status:string,isDoctor?:boolean) {
     this.fireauth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // User registration successful, now store additional data in Firestore
         const uid = userCredential.user!.uid;
         return this.firestore.collection('users').doc(uid).set({
-          iAdmin: iAdmin
+          iAdmin: iAdmin,
+          isDoctor:isDoctor,
+          status:status,
+          password:password,
+          email:email
         });
       })
       .then(() => {
@@ -67,7 +71,6 @@ export class AuthService {
         this.router.navigate(['/SignUp']);
       });
   }
-
 
   logout() {
     this.fireauth.signOut()

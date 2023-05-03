@@ -15,6 +15,7 @@ export class SignUpComponent  implements OnInit{
   birthDate:string='';
   mobileNumber:string='';
   isAdmin=false;
+  status='Active'
 
 
 
@@ -50,14 +51,15 @@ export class SignUpComponent  implements OnInit{
     }
 
 
-    this.auth.register(this.email,this.password, this.isAdmin);
+    this.auth.register(this.email,this.password, this.isAdmin,this.status);
     this.email='';
     this.password='';
     this.name='';
     this.gender='';
     this.birthDate=''
     this.mobileNumber='';
-    this.isAdmin=false
+    this.isAdmin=false;
+    this.status
 
 
 
