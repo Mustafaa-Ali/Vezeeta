@@ -16,6 +16,7 @@ import { ThanksSubmitComponent } from './components/thanks-submit/thanks-submit.
 import { MyAppointmentsComponent } from './components/my-appointments/my-appointments.component';
 import { HomevisitComponent } from './homevisit/homevisit.component';
 import { MedicalQuestionComponent } from './medical-question/medical-question.component';
+import { QuestionSubmittedComponent } from './components/question-submitted/question-submitted.component';
 
 const routes: Routes = [
 
@@ -35,6 +36,7 @@ const routes: Routes = [
    {path:'OfferDetails/:id',component:OfferDetailsComponent,canActivate:[AuthGuardGuard]},
    {path:'homevisit',component:HomevisitComponent,canActivate:[AuthGuardGuard]},
    {path:'Question',component:MedicalQuestionComponent},
+   {path:'QuestionSubmitted',component:QuestionSubmittedComponent},
 ];
 
 @NgModule({

@@ -58,31 +58,37 @@
           </div>
           <div class="offcanvas-body py-0">
              <ul class="list-unstyled">
+              
               <li class="py-2">
-                  <a class="text-decoration-none text-white " href=""><i class="bi bi-house-door fw-bolder fs-3 pe-2"></i>Home Page</a>
+                  <a class="text-decoration-none text-white " href=""><i class="bi bi-house-door fw-bolder fs-3 pe-2"></i>{{'Home Page' | translate}}</a>
               </li>
               <hr style="opacity: 0.5; width: 100%;
               border-color: rgba(222, 221, 221, 0.5) !important;"/>
               <li class="py-2">
-                  <a class="text-decoration-none text-white " href=""><i class="bi bi-person-plus-fill fw-bolder fs-3 pe-2"></i>Join Now as a user</a>
+                  <a class="text-decoration-none text-white " href="#" routerLink="/SignUp" [hidden]="userLogged"><i class="bi bi-person-plus-fill fw-bolder fs-3 pe-2"></i>{{'Join Now as a user' | translate}}</a>
               </li>
               <hr style="opacity: 0.5; width: 100%;
               border-color: rgba(222, 221, 221, 0.5) !important;"/>
               <li class="py-2">
-                  <a class="text-decoration-none text-white " href=""><i class="bi bi-person-fill-check fw-bolder fs-3 pe-2"></i>Vesseta For Doctors</a>
+                  <a class="text-decoration-none text-white " href="#" ><i class="bi bi-person-fill-check fw-bolder fs-3 pe-2"></i>{{'Vesseta For Doctors' | translate}}</a>
               </li>
               <hr style="opacity: 0.5; width: 100%;
               border-color: rgba(222, 221, 221, 0.5) !important;"/>
               <li class="py-2">
-                  <a class="text-decoration-none text-white " href=""><i class="bi bi-box-arrow-in-right fw-bolder fs-3 pe-2"></i>Login</a>
+                  <a class="text-decoration-none text-white " href="#" routerLink="/signIn" [hidden]="userLogged"><i class="bi bi-box-arrow-in-right fw-bolder fs-3 pe-2"></i>{{'Login' | translate}}</a>
+      
               </li>
+              
               <hr style="opacity: 0.5; width: 100%;
               border-color: rgba(222, 221, 221, 0.5) !important;"/>
               <li class="py-2">
-                  <a  class="text-decoration-none text-white "href="" routerLink="/ContactUs"><i class="bi bi-telephone fw-bolder fs-3  pe-2"></i>Contact Us</a>
+                  <a  class="text-decoration-none text-white "href="" routerLink="/ContactUs"><i class="bi bi-telephone fw-bolder fs-3  pe-2"></i>{{'Contact Us' | translate}}</a>
               </li>
               <hr style="opacity: 0.5;width: 100%;
               border-color: rgba(222, 221, 221, 0.5) !important;"/>
+              <li class="py-2">
+                <a class="text-decoration-none text-white " routerLink="/signIn" (click)="onLogout()" [hidden]="!userLogged"><i class="bi bi-box-arrow-right fs-3  pe-2"></i> {{'Logout' | translate}}</a>
+              </li>
              </ul>
           </div>
           </div>

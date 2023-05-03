@@ -204,12 +204,12 @@
     "How old are you?":"كم عمرك؟",
     "For another person":"لمريض اخر",
     "For Myself":"لنفسى",
-    "The question is for":"سؤالك",
+    "The question is for:":"سؤالك:",
     "0/50 characters":"0/50 حرفا",
     "Example: What are the causes of acne?":"مثال: ما هى أسباب تكون حب الشباب؟",
     "(Your identity will be anonymous)":"(لن يتم الافصاح عن هويتك)",
-    "Your question":"سؤالك",
-    "Select gender":"اختار النوع",
+    "Your question":"سؤالك: ",
+    "Select gender:":"اختار النوع:",
     "Don't have an account?":"ليس لديك حساب؟",
     "Sign up":"سجل الان",
     "Dentistry":"اسنان",
@@ -230,7 +230,18 @@
     "About You":"نبذة عنك",
     "have already an account?":"لديك حساب بالفعل؟",
     "Enter your personal info":"ادخل بياناتك",
-    "This is your personal account information, you will be prompted next for your clinic/hospital information.":"هذه هي معلومات حسابك الشخصي ، ستتم مطالبتك بعد ذلك بمعلومات عن العيادة / المستشفى."
+    "This is your personal account information, you will be prompted next for your clinic/hospital information.":"هذه هي معلومات حسابك الشخصي ، ستتم مطالبتك بعد ذلك بمعلومات عن العيادة / المستشفى.",
+    "Home Page":"الصفحة الرئيسية",
+    "Vesseta For Doctors":"فيزيتا للاطباء",
+    "Join Now as a user":"انضم لفيزيتا الان",
+    "Your Question has been submitted":"تم ارسال سؤالك",
+    "We will contact with you soon!":"سوف يتم الرد عليك قريبا",
+    "Doctor Call":"مكالمة دكتور",
+    "Clinic Visit":"كشف عيادة",
+    "Search for specialty, doctor or hospital":"ابحث بالتخصص او دكتور او مستشفى",
+    "Brwose Doctor":"اعرض الدكتور",
+    "Or call":"او اتصل ب",
+    "Search":"ابحث"
     
 
 }
