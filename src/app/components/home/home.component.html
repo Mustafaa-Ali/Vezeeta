@@ -102,7 +102,7 @@
                             <div class="searchh text-light fw-bold fs-5 text-center d-flex justify-content-center align-items-center"
                                 routerLink="/searchResult" (click)="SearchDoctor()">
                                 <i class="bi bi-search me-2"></i>
-                                <span>{{'search' | translate}}</span>
+                                <span>{{'Search' | translate}}</span>
                             </div>
                         </div>
 
@@ -144,31 +144,20 @@
             <div class="container-fluid search-nav-mobile mt-5 p-0 d-md-none px-2">
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <button class="nav-link  active " id="nav-clinck-tab" style="width:33%" data-bs-toggle="tab"
+                        <button class="nav-link  active " id="nav-clinck-tab" style="width:50%" data-bs-toggle="tab"
                             data-bs-target="#nav-clinck" type="button" role="tab" aria-controls="nav-clinck"
                             aria-selected="true">
                             <div class="booking d-flex justify-content-center  align-items-center flex-column active">
                                 <i class="far fa-calendar-plus me-3"></i>
                                 <div>
 
-                                    <h5 class="m-0">Clinic Visit</h5>
+                                    <h5 class="m-0">{{'Clinic Visit' | translate}}</h5>
 
                                 </div>
                             </div>
                         </button>
-                        <button class="nav-link " id="nav-order-tab" style="width:33%" data-bs-toggle="tab"
-                            data-bs-target="#nav-order" type="button" role="tab" aria-controls="nav-profile"
-                            aria-selected="false">
-                            <div class="telephone d-flex justify-content-center   align-items-center  flex-column">
-                                <i class="bi bi-capsule"></i>
-                                <div>
-
-                                    <h5 class="m-0">Order Medicine</h5>
-
-                                </div>
-                            </div>
-                        </button>
-                        <button class="nav-link" id="nav-doctor-tab" style="width:33%" data-bs-toggle="tab"
+                        
+                        <button class="nav-link" id="nav-doctor-tab" style="width:50%" data-bs-toggle="tab"
                             data-bs-target="#nav-doctor" type="button" role="tab" aria-controls="nav-profile"
                             aria-selected="false">
                             <div class="telephone d-flex justify-content-center   align-items-center flex-column">
@@ -176,7 +165,7 @@
                                 <div>
 
 
-                                    <h5 class="m-0 text-center">Doctor Call</h5>
+                                    <h5 class="m-0 text-center">{{'Doctor Call' | translate}}</h5>
 
                                 </div>
                             </div>
@@ -191,8 +180,7 @@
 
                         <div class="my-search">
                             <button class="btn btn-search w-100" type="button" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Search for
-                                specialty, doctor or hospital</button>
+                                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">{{'Search for specialty, doctor or hospital' | translate}}</button>
 
                             <div class="offcanvas offcanvas-top h-100" data-bs-scroll="true" data-bs-backdrop="false"
                                 tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
@@ -200,7 +188,7 @@
                                     <button type="button" class="btn-close text-white" style='width: 6%;'
                                         data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     <h5 class="offcanvas-title text-center " style='width: 94%;'
-                                        id="offcanvasScrollingLabel">Search</h5>
+                                        id="offcanvasScrollingLabel">{{'Search' | translate}}</h5>
 
                                 </div>
                                 <div class="offcanvas-body">
@@ -214,17 +202,14 @@
                                 </div>
                             </div>
                             <div class="">
-                                <button class="btn btn-search w-100" type="button" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Search for
-                                    specialty, doctor or hospital</button>
-
+                                
                                 <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false"
                                     tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                                     <div class="offcanvas-header">
                                         <button type="button" class="btn-close text-white" style='width: 6%;'
                                             data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                         <h5 class="offcanvas-title text-center " style='width: 94%;'
-                                            id="offcanvasScrollingLabel">Search</h5>
+                                            id="offcanvasScrollingLabel">{{'Search' | translate}}</h5>
 
                                     </div>
                                     <div class="offcanvas-body">
@@ -238,15 +223,14 @@
                         </div>
                         <div>
                             <button class="btn Brwose w-100" type="button" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Brwose
-                                Doctor</button>
+                                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">{{'Brwose Doctor' | translate}}</button>
                             <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false"
                                 tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                                 <div class="offcanvas-header">
                                     <button type="button" class="btn-close text-white" style='width: 6%;'
                                         data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     <h5 class="offcanvas-title text-center " style='width: 94%;'
-                                        id="offcanvasScrollingLabel">Search</h5>
+                                        id="offcanvasScrollingLabel">{{'Search' | translate}}</h5>
 
                                 </div>
                                 <div class="offcanvas-body">
@@ -258,7 +242,7 @@
                                 </div>
                             </div>
 
-                            <p class="text-center my-2">Or call <span class="call-num fw-bolder ">16676</span></p>
+                            <p class="text-center my-2">{{'Or call' | translate}} <span class="call-num fw-bolder ">16676</span></p>
                         </div>
 
                     </div>
@@ -266,7 +250,7 @@
                         tabindex="0">
                         <div>
                             <input type="text" placeholder=" Search of aproduct" class="search-in-mobile">
-                            <p class="text-center my-2">Or call <span class="call-num fw-bolder ">16676</span></p>
+                            <p class="text-center my-2">{{'Or call' | translate}} <span class="call-num fw-bolder ">16676</span></p>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="nav-doctor" role="tabpanel" aria-labelledby="nav-doctor-tab"
@@ -279,8 +263,7 @@
 
                                 <div class="">
                                     <button class="btn btn-search w-100" type="button" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Search
-                                        for specialty, doctor or hospital</button>
+                                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">{{'Search for specialty, doctor or hospital' | translate}}</button>
 
                                     <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false"
                                         tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
@@ -288,7 +271,7 @@
                                             <button type="button" class="btn-close text-white" style='width: 6%;'
                                                 data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                             <h5 class="offcanvas-title text-center " style='width: 94%;'
-                                                id="offcanvasScrollingLabel">Search1</h5>
+                                                id="offcanvasScrollingLabel">{{'Search' | translate}}</h5>
                                         </div>
                                         <div class="offcanvas-body">
                                             <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
@@ -302,8 +285,7 @@
                             </div>
                             <div>
                                 <button class="btn Brwose w-100" type="button" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offbrwose" aria-controls="offcanvasScrolling">Brwose
-                                    Doctor</button>
+                                    data-bs-target="#offbrwose" aria-controls="offcanvasScrolling">{{'Brwose Doctor' | translate}}</button>
                                 <div class="offcanvas offcanvas-top h-100" data-bs-scroll="true"
                                     data-bs-backdrop="false" tabindex="-1" id="offbrwose"
                                     aria-labelledby="offcanvasScrollingLabel">
@@ -311,7 +293,7 @@
                                         <button type="button" class="btn-close text-white" style='width: 6%;'
                                             data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                         <h5 class="offcanvas-title text-center " style='width: 94%;'
-                                            id="offcanvasScrollingLabel">Search</h5>
+                                            id="offcanvasScrollingLabel">{{'Search' | translate}}</h5>
 
                                     </div>
                                     <div class="offcanvas-body">
@@ -322,7 +304,7 @@
                                     </div>
                                 </div>
 
-                                <p class="text-center my-2">Or call <span class="call-num fw-bolder ">16676</span></p>
+                                <p class="text-center my-2">{{'Or call' | translate}} <span class="call-num fw-bolder ">16676</span></p>
                             </div>
 
                         </div>
@@ -357,7 +339,7 @@
             </div>
 
         </div>
-        <div class="pharm row p-lg-5 mb-5" [dir]="'ltr' | translate">
+        <!-- <div class="pharm row p-lg-5 mb-5" [dir]="'ltr' | translate">
             <div class="w-100 d-flex">
                 <div class="pharm-img">
                     <img  src="assets/Pharmacy.webp" alt="" height="54" width="54">
@@ -370,7 +352,7 @@
             <button class="place">{{'Place order' | translate}}</button>
 
 
-        </div>
+        </div> -->
 
         <div class="new-two row">
             <div class="col-lg-6">
