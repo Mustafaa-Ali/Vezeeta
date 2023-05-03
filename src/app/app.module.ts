@@ -54,6 +54,9 @@ import { HomevisitComponent } from './homevisit/homevisit.component';
 import { TeleconsultationComponent } from './teleconsultation/teleconsultation.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
+import { MedicalQuestionComponent } from './medical-question/medical-question.component';
+import { QuestionSubmittedComponent } from './components/question-submitted/question-submitted.component';
+
 export function httpTranslateLoaderFactory(http:HttpClient){
   return new TranslateHttpLoader(http,'./assets/i18n/','.json')
 }
@@ -79,6 +82,8 @@ export function httpTranslateLoaderFactory(http:HttpClient){
     SortPipe,
     HomevisitComponent,
     TeleconsultationComponent,
+    MedicalQuestionComponent,
+    QuestionSubmittedComponent,
 
 
 

@@ -1,16 +1,16 @@
-<form action="" class= "container-md m-auto d-flex justify-content-center align-items-center signIn-form">
+<form action="" class= "container-md m-auto d-flex justify-content-center align-items-center signIn-form" [dir]="'dir' | translate">
     <div class="w-50">
         <div class="col-12 d-flex align-items-center mb-2">
-            <i class="fa-regular fa-envelope"></i>
-            <input type="text" class="form-control rounded-0" id="inputAddress" placeholder="Email-Address">
+
+            <input type="text" class="form-control rounded-0" id="inputAddress" placeholder="{{'Email' | translate}}">
           </div>
           <div class="col-12 d-flex align-items-center">
-            <i class="fas fa-lock"></i>
-            <input type="password" class="form-control rounded-0" id="inputAddress" placeholder="Password">
+
+            <input type="password" class="form-control rounded-0" id="inputAddress" placeholder="{{'Password' | translate}}">
           </div>
           <div class="col-12 d-flex justify-content-center mt-3">
-            <button type="submit" class="btn btn-primary w-25">Log in</button>
+            <button type="submit" class="btn btn-primary w-25">{{'Login' | translate}}</button>
           </div>
-          <p class="text-center mt-2">Don't have an account? <a routerLink="/SignUpDoctor">sign up</a></p>
+          <p class="text-center mt-2">{{"Don't have an account?" | translate}} <a routerLink="/SignUpDoctor">{{'Sign up' | translate}}</a></p>
     </div>
 </form>

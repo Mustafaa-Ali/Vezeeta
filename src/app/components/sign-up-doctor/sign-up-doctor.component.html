@@ -1,81 +1,98 @@
-<div class="container-md">
-    <h3 class="text-black-50">Enter your personal info</h3>
-    <p class="text-black-50">This is your personal account information, you will be prompted next for your clinic/hospital information.</p>
+<div class="container-md p-2" [dir]="'dir' | translate">
+    <h3 class="text-black-50">{{'Enter your personal info' | translate}}</h3>
+    <p class="text-black-50">{{'This is your personal account information, you will be prompted next for your clinic/hospital information.' | translate}}</p>
   </div>
-  <form action="" class= "row container-md m-auto">
-      <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+  <form action="" class= "container-md m-auto" [dir]="'dir' | translate">
+      <!-- <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
           <label class="inputFile d-flex flex-column justify-content-center align-items-center" for="formFile">
             <i class="fas fa-plus"></i>
             <i class="fas fa-camera-retro fs-2"></i>
             <input class="d-none" type="file" id="formFile">
           </label>
-        </div>
-        <div class="col-12 col-md-9 row g-3">
+        </div> -->
+        <div class="col-12  row g-3">
           <div class="col-md-6 d-flex align-items-center">
-              <i class="fa-regular fa-user"></i>
-              <input type="text" class="form-control rounded-0" id="firstName" placeholder="First Name">
+              <input type="text" class="form-control rounded-0" id="firstName" placeholder="{{'Title' | translate}}">
             </div>
           <div class="col-md-6">
-              <input type="text" class="form-control rounded-0" id="lasstName" placeholder="Last Name">
+              <input type="text" class="form-control rounded-0" id="lasstName" placeholder="{{'Name' | translate}}">
             </div>
-            <div class="col-12 d-flex align-items-center">
-              <i class="fa-solid fa-mobile-screen-button"></i>
-              <input type="text" class="form-control rounded-0" id="inputAddress" placeholder="Phone Number">
-            </div>
-            <div class="col-12 d-flex align-items-center">
-              <i class="fa-solid fa-stethoscope"></i>
+            <div class="col-md-6 d-flex align-items-center">
               <select id="inputState" class="form-select speciality rounded-0">
-                <option disabled selected>speciality</option>
-                     <option> Dermatology (Skin)</option>
-                     <option> Dentistry (Teeth)</option>
-                     <option> Psychiatry (Mental, Emotional or Behavioral Disorders)</option>
-                     <option> Pediatrics and New Born (Child)</option>
-                     <option> Neurology (Brain & Nerves)</option>
-                     <option> Orthopedics (Bones)</option>
-                     <option> Gynaecology and Infertioptionty</option>
-                     <option> Ear, Nose and Throat</option>
-                     <option> Cardiology and Vascular Disease (Heart)</option>
-                     <option> Allergy and Immunology (Sensitivity and Immunity)</option>
-                     <option> Andrology and Male Infertioptionty</option>
-                     <option> Audiology</option>
-                     <option> Cardiology and Thoracic Surgery (Heart & Chest)</option>
-                     <option> Chest and Respiratory</option>
-                     <option> Diabetes and Endocrinology</option>
-                     <option> Diagnostic Radiology (Scan Centers)</option>
-                     <option> Dietitian and Nutrition</option>
-                     <option> Family Medicine</option>
+                <option disabled selected>{{'Gender' | translate}}</option>
+                <option>{{'Male' | translate}}</option>
+                <option>{{'Female' | translate}}</option>
+                </select>
+                </div>
+            <div class="col-md-6 d-flex align-items-center">
+              <select id="inputState" class="form-select speciality rounded-0">
+                <option disabled selected>{{'Entity' | translate}}</option>
+                <option>{{'Hospital' | translate}}</option>
+                <option>{{'Clinic' | translate}}</option>
+                <option>{{'Center' | translate}}</option>
+                </select>
+                </div>
+            <div class="col-12 d-flex align-items-center">
+              <select id="inputState" class="form-select speciality rounded-0">
+                <option disabled selected>{{'Speciality' | translate}}</option>
+                     <option> {{'Dermatology' | translate}}</option>
+                     <option> {{'Dentistry' | translate}}</option>
+                     <option> {{'Psychiatry' | translate}} </option>
+                     <option> {{'Pediatrics' | translate}} </option>
+                     <option> {{'Neurology' | translate}} </option>
+                     <option> {{'Orthopedics' | translate}} </option>
+                     <option> {{'Gynaecology' | translate}} </option>
+                     <option> {{'Ear, Nose and Throat' | translate}}</option>
+                     <option> {{'Cardiology' | translate}} </option>
+                     <option> {{'Diabetes and Endocrinology' | translate}}</option>
+                     <option> {{'Dietitian and Nutrition' | translate}}</option>
               </select>
             </div>
-            <div class="col-12 d-flex align-items-center">
-              <i class="fa-solid fa-location-dot"></i>
+            <div class="col-md-6 d-flex align-items-center">
               <select id="inputState" class="form-select speciality rounded-0">
-                <option disabled selected>City</option>
-                <option>Cairo</option>
-                <option>Giza</option>
-                <option>Alexanderia</option>
-                <option>Qalyubia</option>
-                <option>Gharbya</option>
-                <option>Menofia</option>
-                <option>fayoum</option>
-                <option>Dakahlya</option>
-                <option>sharqia</option>
-                <option>aswan</option>
-                <option>Qena</option>
-                <option>luxor</option>
-                <option>Sohag</option>
+                <option disabled selected>{{'City' | translate}}</option>
+                <option>{{'Cairo' | translate}}</option>
+                <option>{{'Giza' | translate}}</option>
+                <option>{{'Alexandria' | translate}}</option>
+                <option>{{'Qalyubia' | translate}}</option>
+                <option>{{'Gharbia' | translate}}</option>
+                <option>{{'Menoufia' | translate}}</option>
+                <option>{{'Fayoum' | translate}}</option>
+                <option>{{'El-Dakahlia' | translate}}</option>
+                <option>{{'Sharqia' | translate}}</option>
+                <option>{{'Aswan' | translate}}</option>
+                <option>{{'Qena' | translate}}</option>
+                <option>{{'Luxor' | translate}}</option>
+                <option>{{'Sohag' | translate}}</option>
               </select>
             </div>
-            <div class="col-12 d-flex align-items-center">
-              <i class="fa-regular fa-envelope"></i>
-              <input type="text" class="form-control rounded-0" id="inputAddress" placeholder="Email-Address">
+            <div class="col-md-6">
+              <input type="text" class="form-control rounded-0" id="Street" placeholder="{{'Street' | translate}}">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control rounded-0" id="Buildingnum" placeholder="{{'Building' | translate}}">
+            </div>
+            <div class="col-md-6">
+              <input type="tel" class="form-control rounded-0" id="Clinicnum" placeholder="{{'Clinic / Hospital / Center Number' | translate}}">
             </div>
             <div class="col-12 d-flex align-items-center">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" class="form-control rounded-0" id="inputAddress" placeholder="Password">
+              <input type="text" class="form-control rounded-0" id="inputAddress" placeholder="{{'Email' | translate}}">
+            </div>
+            <div class="col-12 d-flex align-items-center">
+              <input type="password" class="form-control rounded-0" id="inputAddress" placeholder="{{'Password' | translate}}">
+            </div>
+            <div class="col-12 d-flex align-items-center">
+              <input type="number" class="form-control rounded-0" id="inputExamFee" placeholder="{{'Examination Fee' | translate}}">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="{{'About You' | translate}}"></textarea>
+            </div>
+            <div class="col-12 d-flex align-items-center">
+              <input type="text" class="form-control rounded-0" id="inputExamFee" placeholder="{{'Image URL' | translate}}">
             </div>
             <div class="col-12 d-flex justify-content-center">
-              <button type="submit" class="btn btn-primary w-25"  >Sign up </button>
+              <button type="submit" class="btn btn-primary w-25"  >{{'Sign up' | translate}} </button>
             </div>
-            <p class="text-center mt-2">have already an account? <a routerLink="/SignInDoctor">log in</a></p>
+            <p class="text-center mt-2">{{'have already an account?' | translate}} <a routerLink="/SignInDoctor">{{'login' | translate}}</a></p>
         </div>          
   </form>

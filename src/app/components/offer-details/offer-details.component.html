@@ -1,6 +1,6 @@
 <div class="container" [dir]="'dir' | translate">
     <div class="row">
-        <div class="col-7">
+        <div class="col-12 col-md-7">
             <br>
             <div>
                 <img [src]="offersDetails.ImgUrl" class="card-img-top" alt="...">
@@ -26,11 +26,13 @@
             </div>
 
         </div>
-        <div class="col-1 p-3">
+        <div class="d-none d-md-block col-1 p-3">
             <div class="vertical-line "></div>
         </div>
 
-        <div class="col-4">
+        <hr class="d-md-none">
+
+        <div class="col-12 col-md-4 p-3">
 
             <div class="container">
                 <div class="sessionname">{{offersDetails.SessionName | translate}}</div>
@@ -57,10 +59,6 @@
 
                 </div>
                 <hr>
-                <div>
-                    Location
-
-                </div>
                 <div id="payments"></div>
             </div>
         </div>
