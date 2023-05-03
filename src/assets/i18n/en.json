@@ -227,7 +227,7 @@
     "Sohag":"Sohag",
     "Street":"Street",
     "Building":"Building",
-    "Clinic Number":"Clinic Number",
+    "Clinic / Hospital / Center Number":"Clinic / Hospital / Center Number",
     "Examination Fee":"Examination Fee",
     "About You":"About You",
     "have already an account?":"have already an account?",
@@ -243,7 +243,13 @@
     "Search for specialty, doctor or hospital":"Search forspecialty, doctor or hospital",
     "Brwose Doctor":"Brwose Doctor",
     "Or call":"Or call",
-    "Search":"Search"
+    "Search":"Search",
+    "Name":"Name",
+    "Title":"Title",
+    "Gender":"Gender",
+    "Entity":"Entity",
+    "Clinic":"Clinic",
+    "Image URL":"Image URL"
     
 
 

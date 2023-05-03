@@ -2,28 +2,37 @@
     <h3 class="text-black-50">{{'Enter your personal info' | translate}}</h3>
     <p class="text-black-50">{{'This is your personal account information, you will be prompted next for your clinic/hospital information.' | translate}}</p>
   </div>
-  <form action="" class= "row container-md m-auto" [dir]="'dir' | translate">
-      <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+  <form action="" class= "container-md m-auto" [dir]="'dir' | translate">
+      <!-- <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
           <label class="inputFile d-flex flex-column justify-content-center align-items-center" for="formFile">
             <i class="fas fa-plus"></i>
             <i class="fas fa-camera-retro fs-2"></i>
             <input class="d-none" type="file" id="formFile">
           </label>
-        </div>
-        <div class="col-12 col-md-9 row g-3">
+        </div> -->
+        <div class="col-12  row g-3">
           <div class="col-md-6 d-flex align-items-center">
-              <i class="fa-regular fa-user"></i>
-              <input type="text" class="form-control rounded-0" id="firstName" placeholder="{{'First Name' | translate}}">
+              <input type="text" class="form-control rounded-0" id="firstName" placeholder="{{'Title' | translate}}">
             </div>
           <div class="col-md-6">
-              <input type="text" class="form-control rounded-0" id="lasstName" placeholder="{{'Last Name' | translate}}">
+              <input type="text" class="form-control rounded-0" id="lasstName" placeholder="{{'Name' | translate}}">
             </div>
+            <div class="col-md-6 d-flex align-items-center">
+              <select id="inputState" class="form-select speciality rounded-0">
+                <option disabled selected>{{'Gender' | translate}}</option>
+                <option>{{'Male' | translate}}</option>
+                <option>{{'Female' | translate}}</option>
+                </select>
+                </div>
+            <div class="col-md-6 d-flex align-items-center">
+              <select id="inputState" class="form-select speciality rounded-0">
+                <option disabled selected>{{'Entity' | translate}}</option>
+                <option>{{'Hospital' | translate}}</option>
+                <option>{{'Clinic' | translate}}</option>
+                <option>{{'Center' | translate}}</option>
+                </select>
+                </div>
             <div class="col-12 d-flex align-items-center">
-              <i class="fa-solid fa-mobile-screen-button"></i>
-              <input type="text" class="form-control rounded-0" id="inputAddress" placeholder="{{'Phone Number' | translate}}">
-            </div>
-            <div class="col-12 d-flex align-items-center">
-              <i class="fa-solid fa-stethoscope"></i>
               <select id="inputState" class="form-select speciality rounded-0">
                 <option disabled selected>{{'Speciality' | translate}}</option>
                      <option> {{'Dermatology' | translate}}</option>
@@ -40,7 +49,6 @@
               </select>
             </div>
             <div class="col-md-6 d-flex align-items-center">
-              <i class="fa-solid fa-location-dot"></i>
               <select id="inputState" class="form-select speciality rounded-0">
                 <option disabled selected>{{'City' | translate}}</option>
                 <option>{{'Cairo' | translate}}</option>
@@ -65,22 +73,22 @@
               <input type="text" class="form-control rounded-0" id="Buildingnum" placeholder="{{'Building' | translate}}">
             </div>
             <div class="col-md-6">
-              <input type="tel" class="form-control rounded-0" id="Clinicnum" placeholder="{{'Clinic Number' | translate}}">
+              <input type="tel" class="form-control rounded-0" id="Clinicnum" placeholder="{{'Clinic / Hospital / Center Number' | translate}}">
             </div>
             <div class="col-12 d-flex align-items-center">
-              <i class="fa-regular fa-envelope"></i>
               <input type="text" class="form-control rounded-0" id="inputAddress" placeholder="{{'Email' | translate}}">
             </div>
             <div class="col-12 d-flex align-items-center">
-              <i class="fa-solid fa-lock"></i>
               <input type="password" class="form-control rounded-0" id="inputAddress" placeholder="{{'Password' | translate}}">
             </div>
             <div class="col-12 d-flex align-items-center">
-              <i class="fa-solid fa-money-bill"></i>
-              <input type="text" class="form-control rounded-0" id="inputExamFee" placeholder="{{'Examination Fee' | translate}}">
+              <input type="number" class="form-control rounded-0" id="inputExamFee" placeholder="{{'Examination Fee' | translate}}">
             </div>
             <div class="mb-3">
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="{{'About You' | translate}}"></textarea>
+            </div>
+            <div class="col-12 d-flex align-items-center">
+              <input type="text" class="form-control rounded-0" id="inputExamFee" placeholder="{{'Image URL' | translate}}">
             </div>
             <div class="col-12 d-flex justify-content-center">
               <button type="submit" class="btn btn-primary w-25"  >{{'Sign up' | translate}} </button>
