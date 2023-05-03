@@ -42,17 +42,16 @@
 
                         <div class="searchForAdoctor p-3 d-flex flex-column flex-md-row">
                             <div class="dropdown">
+
                                 <button
+
                                     class="speciality border p-2 d-flex justify-content-between align-items-center bg-light"
                                     type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="d-flex flex-column" style="width: calc(100% - 10px);">
                                         <span class="d-flex specia"><i class="fas fa-stethoscope "></i>{{'choose a speciality' | translate}}</span>
-                                        <select class="form-control" name="cat" id="cat"
-                                            [(ngModel)]="selectedSpecialityID">
-                                            <option value="0" style="color:#0070cd">{{'All Specialities' | translate}}
-                                            </option>
-                                            <option *ngFor="let spe of speciality" [value]="spe.id"
-                                                style="color:#0070cd">{{spe.Name}}</option>
+                                        <select class="form-control" name="cat" id="cat" [(ngModel)]="selectedSpecialityID">
+                                          <option [ngValue]="null" style="color:#0070cd">{{'All Specialities' | translate}}</option>
+                                          <option *ngFor="let spe of speciality" style="color:#0070cd" [ngValue]="spe.Name">{{spe.Name}}</option>
                                         </select>
                                     </div>
 
@@ -66,10 +65,10 @@
                                     <div class="d-flex flex-column" style="width: calc(100% - 10px);">
                                         <span class="d-flex specia"><i class="bi bi-geo-alt me-2"></i>{{'Choose city' |
                                             translate}}</span>
-                                        <select class=" form-control" name="cat" id="cat" [(ngModel)]="selectedCityID">
+                                        <select class=" form-control" name="cat" id="cat" [(ngModel)]="selectedCityID" >
                                             <option value="0" style="color:#0070cd">{{'All Cities' | translate}}
                                             </option>
-                                            <option *ngFor="let city of cities" [value]="city.id" style="color:#0070cd">
+                                            <option *ngFor="let city of cities" [ngValue]="city.Name" style="color:#0070cd" >
                                                 {{city.Name}}</option>
                                         </select>
                                     </div>
@@ -100,9 +99,9 @@
                             </div>
 
                             <div class="searchh text-light fw-bold fs-5 text-center d-flex justify-content-center align-items-center"
-                                routerLink="/searchResult" (click)="SearchDoctor()">
+                              (click)="SearchDoctor()">
                                 <i class="bi bi-search me-2"></i>
-                                <span>{{'search' | translate}}</span>
+                                <span>{{'search22' | translate}}</span>
                             </div>
                         </div>
 
@@ -121,7 +120,7 @@
                                             [(ngModel)]="selectedSpecialityID">
                                             <option value="0" style="color:#0070cd">{{'All Specialities' | translate}}
                                             </option>
-                                            <option *ngFor="let spe of speciality" [value]="spe.id"
+                                            <option *ngFor="let spe of speciality" value={{spe.Name}}
                                                 style="color:#0070cd">{{spe.Name}}</option>
                                         </select>
 
@@ -131,7 +130,7 @@
 
                             </div>
 
-                            <div
+                            <div (click)="SearchDoctor()"
                                 class="searchh text-light fw-bold fs-5 text-center d-flex justify-content-center align-items-center">
                                 <i class="bi bi-search me-2"></i>
                                 <span>{{'search' | translate}}</span>
@@ -288,7 +287,7 @@
                                             <button type="button" class="btn-close text-white" style='width: 6%;'
                                                 data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                             <h5 class="offcanvas-title text-center " style='width: 94%;'
-                                                id="offcanvasScrollingLabel">Search1</h5>
+                                                id="offcanvasScrollingLabel">Search</h5>
                                         </div>
                                         <div class="offcanvas-body">
                                             <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
@@ -488,14 +487,12 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row ">
-                        <div class="col-lg-3 col-6 mb-3" *ngFor="let spe1 of specialityslide1 let i=index">
-                            <div class=" text-start position-relative  book-slide">
-
-                                <img src={{spe1.imgUrl}} width="" alt="">
-                                <h4>{{spe1.Name | translate}} </h4>
-
-                            </div>
+                      <div class="col-lg-3 col-6 mb-3" *ngFor="let spe1 of specialityslide1 let i=index">
+                        <div class="text-start position-relative book-slide" (click)="onSpecialityClick(spe1.Name)">
+                            <img src={{spe1.imgUrl}} width="" alt="">
+                            <h4>{{spe1.Name | translate}} </h4>
                         </div>
+                    </div>
 
                     </div>
 
@@ -503,7 +500,7 @@
                 <div class="carousel-item">
                     <div class="row ">
                         <div class="col-lg-3 col-6 mb-3" *ngFor="let spe2 of specialityslide2 let i=index">
-                            <div class=" text-start position-relative book-slide">
+                            <div class=" text-start position-relative book-slide"  (click)="onSpecialityClick(spe2.Name)">
 
                                 <img src={{spe2.imgUrl}} width="" alt="">
                                 <h4>{{spe2.Name | translate}} </h4>

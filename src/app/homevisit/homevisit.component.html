@@ -9,43 +9,43 @@
         <div class="form-group row">
           <label for="firstName" class="col-sm-3 col-form-label">{{'First Name' | translate}}</label>
           <div class="col-sm-7">
-            <input type="text" class="form-control" id="firstName" formControlName="firstName"><br>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName" required><br>
           </div>
         </div>
         <div class="form-group row">
           <label for="lastName" class="col-sm-3 col-form-label">{{'Last Name' | translate}}</label>
           <div class="col-sm-7">
-            <input type="text" class="form-control" id="lastName" formControlName="lastName"><br>
+            <input type="text" class="form-control" id="lastName" formControlName="lastName" required><br>
           </div>
         </div>
         <div class="form-group row">
           <label for="email" class="col-sm-3 col-form-label">{{'Email address' | translate}}</label>
           <div class="col-sm-7">
-            <input type="email" class="form-control" id="email" formControlName="email"><br>
+            <input type="email" class="form-control" id="email" formControlName="email" required><br>
           </div>
         </div>
         <div class="form-group row">
           <label for="phoneNumber" class="col-sm-3 col-form-label">{{'Phone Number' | translate}}</label>
           <div class="col-sm-7">
-            <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber"><br>
+            <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" required><br>
           </div>
         </div>
         <div class="form-group row">
           <label for="preferredDate" class="col-sm-3 col-form-label">{{'Preferred Date' | translate}}</label>
           <div class="col-sm-7">
-            <input type="date" class="form-control" id="preferredDate" formControlName="preferredDate"><br>
+            <input type="date" class="form-control" id="preferredDate" formControlName="preferredDate" required><br>
           </div>
         </div>
         <div class="form-group row">
           <label for="preferredTime" class="col-sm-3 col-form-label">{{'Preferred Time' | translate}}</label>
           <div class="col-sm-7">
-            <input type="time" class="form-control" id="preferredTime" formControlName="preferredTime"><br>
+            <input type="time" class="form-control" id="preferredTime" formControlName="preferredTime" required><br>
           </div>
         </div>
         <div class="form-group row">
           <label for="medicalSpeciality" class="col-sm-3 col-form-label">{{'Medical Speciality' | translate}}</label>
           <div class="col-sm-7">
-            <select class="form-control" id="medicalSpeciality" formControlName="medicalSpeciality">
+            <select class="form-control" id="medicalSpeciality" formControlName="medicalSpeciality" required>
               <option value="">{{'-- Select Medical Speciality --' | translate}}</option>
               <option value="Dermatology">{{'Dermatology' | translate}}</option>
               <option value="Cardiology">{{'Cardiology' | translate}}</option>
@@ -61,20 +61,22 @@
           </div>
         </div><br>
         <div class="form-group row">
-            <label for="Reason for Appointment" class="col-sm-3 col-form-label">{{'Reason for Appointment' | translate }}</label>
+            <label for="notes" class="col-sm-3 col-form-label">{{'Reason for Appointment' | translate }}</label>
             <div class="col-sm-7">
-              <textarea class="form-control" id="Reason for Appointment" rows="4" formControlName="Reason for Appointment"></textarea> <br>
+              <textarea class="form-control" id="notes" rows="4" formControlName="notes"></textarea> <br>
               <button type="submit" id="btn" class="btn btn-danger">{{'Book Now' | translate}}</button>
             </div>
           </div><br>
-            
-                
 
-           
-          
+
+
+
+
         </form>
       </div>
     </div>
+
+
     <style lang="scss">
      .row {
   display: flex;
@@ -102,7 +104,7 @@ img {
   font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
-  
+
   letter-spacing: 1px;
   transition: all 0.3s ease;
 }
@@ -117,4 +119,4 @@ img {
 
 
 
-    </style>  
+    </style>

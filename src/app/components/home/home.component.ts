@@ -29,26 +29,54 @@ export class HomeComponent {
   speciality:ISpeciality [] =[];
   specialityslide1:ISpeciality [] =[];
   specialityslide2:ISpeciality [] =[];
-  selectedCityID:number=0;
+  selectedCityID:string=''
   slideNum = 0;
-  selectedSpecialityID:number=0;
+  selectedSpecialityID:string='';
   specialityOptions: string[] = [];
   myControl = new FormControl('');
   filteredOptions: Observable<string[]>;
-  
+
 
   constructor(private DS: DoctorsService, private CS:CityService, private OS:OfferService, private SS:SpecialityService,private router:Router) {
      this.filteredOptions = new Observable();
+    //  this.sendData()
   }
 
 
+// sendData(){
+//   this.DS.sharedName=this.doctorName
+//   this.DS.sharedCity=this.selectedCityID
+//   this.DS.sharedSpeciality=this.selectedSpecialityID
+
+// }
   SearchDoctor() {
-    this.DS.getDoctor(this.doctorName)
+    this.DS.sharedName=this.doctorName
+    this.DS.sharedSpeciality=this.selectedSpecialityID
+    this.DS.sharedCity=this.selectedCityID
+    this.DS.getDoctor(this.doctorName,this.selectedSpecialityID,this.selectedCityID).then((doctors) => {
 
-    this.Doctor = this.DS.doctors;
-    console.log(this.Doctor);
+      this.Doctor = this.DS.doctors = doctors;
+      this.DS.setDoctors(doctors);
+      console.log("MMM", this.Doctor);
+      console.log("mmllo", this.DS.doctors);
+      this.DS.getDoctorList()
+      this.router.navigate(['/searchResult'])
+    });
+
   }
 
+  onSpecialityClick(specialityName: string) {
+
+    this.DS.getDoctor(null,specialityName).then((doctors) => {
+      this.DS.sharedSpeciality=specialityName;
+        this.Doctor = this.DS.doctors = doctors;
+        this.DS.setDoctors(doctors);
+        console.log("MMM", this.Doctor);
+        console.log("mmllo", this.DS.doctors);
+        this.DS.getDoctorList();
+        this.router.navigate(['/searchResult']);
+    });
+}
 
   ngOnInit(){
    this.CS.getCity().subscribe((data)=>{
@@ -86,7 +114,7 @@ export class HomeComponent {
     }
    })
 
-   
+
   }
 
 
@@ -109,7 +137,7 @@ export class HomeComponent {
     this.router.navigate(['OfferDetails',id])
 
     console.log(id);
-    
+
   }
 
 }

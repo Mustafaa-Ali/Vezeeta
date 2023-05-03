@@ -28,7 +28,7 @@ import { NgbDatepicker, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import {MatInputModule} from '@angular/material/input';
-import { DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
+
 
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { OffersComponent } from './components/offers/offers.component';
@@ -52,7 +52,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { HomevisitComponent } from './homevisit/homevisit.component';
 import { TeleconsultationComponent } from './teleconsultation/teleconsultation.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
 export function httpTranslateLoaderFactory(http:HttpClient){
   return new TranslateHttpLoader(http,'./assets/i18n/','.json')
 }
@@ -91,10 +92,12 @@ export function httpTranslateLoaderFactory(http:HttpClient){
     AppRoutingModule,
     // NgModule,
 
-    MbscModule,
+    NgxPaginationModule,
+
+    DlDateTimeDateModule,
+    DlDateTimePickerModule,
 
 
-   
     HttpClientJsonpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
@@ -125,7 +128,7 @@ export function httpTranslateLoaderFactory(http:HttpClient){
     // FontAwesomeModule,
 
   ],
-  providers: [FilterPipe],
+  providers: [FilterPipe,HomeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

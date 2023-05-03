@@ -40,12 +40,13 @@ cursor: pointer;
     display: flex;
    border-bottom-left-radius: 0;
    border-bottom-right-radius: 0;
+
 }
 </style>
 <section class="container bg-light">
 
-  <div class="row">
-      <div id="filterDiv" class="col-lg-3 col-sm-12">
+  <div class="row" >
+      <div id="filterDiv" class="col-lg-2 col-sm-12">
          <div id="filter" class="btn bg-primary text-white p-2"><i class="fa fa-solid fa fa-filter"></i> &nbsp; Filters</div>
           <div class="accordion" id="accordionExample">
               <div class="accordion-item">
@@ -169,9 +170,9 @@ cursor: pointer;
 
             </div>
       </div>
-  <section  class="col-lg-9 col-sm-12">
-    <div id="res1" class="row bg-white rounded-3 m-3 p-3 d-flex" *ngFor="let doctor of filterDoctors(doctors)">
-     <div class="col-lg-3 col-sm-12"> <img [src]="doctor.ImgUrl" style="border-radius:50%"></div>
+  <section  class="col-lg-10 col-sm-12">
+    <div id="res1" class="row bg-white rounded-3 m-3 p-3 d-flex" *ngFor="let doctor of filterDoctors(doctors)  | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+      <div class="col-lg-3 col-sm-12"> <img [src]="doctor.ImgUrl" style="border-radius:50%"></div>
      <div class="col-lg-5 col-sm-12 ">
      <h3 style="color: #0070cd;"> <span style="font-size: small;">{{doctor.Name}}</span></h3>
        <h5 style="color: gray;">{{doctor.Speciality}}</h5>
@@ -197,7 +198,21 @@ cursor: pointer;
 
   </div>
   <div class="col-lg-4" >
+    <div>
+      <dl-date-time-picker
+      maxView="year"
+      minView="hour"
+      startView="day"
+      returnFormat="iso8601"
+      [(ngModel)]='dateSelected'
+      (onChange)="updateAppointment(doctor, doctor['dateSelected'])"
+    >
+    </dl-date-time-picker>
+
+
+    </div>
     <!-- <div>
+
       <mbsc-datepicker
   [controls]="['calendar']"
   calendarType="week"
@@ -221,7 +236,7 @@ cursor: pointer;
     </mbsc-datepicker>
     </div> -->
 
-    <div class="btn btn-danger " style="width: 100%;" (click)="bookAppointments(doctor?.Name||'',doctor?.ImgUrl||'',doctor?.Speciality||'',dateSelected,timeSelected,doctor?.ExaminationFees?.toString()||'',doctor?.Location||'',doctor?.Phone?.toString()||'',doctor.id)">Book</div>
+    <div class="btn btn-danger " style="width: 100%;" (click)="bookAppointments(doctor?.Name||'',doctor?.ImgUrl||'',doctor?.Speciality||'',dateSelected,doctor?.ExaminationFees?.toString()||'',doctor?.Location||'',doctor?.Phone?.toString()||'',doctor.id)">Book</div>
 
   </div>
   </div>
@@ -234,33 +249,7 @@ cursor: pointer;
 
 
   </div>
-
+  <div class="text-center">
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+  </div>
    </section>
-   <!-- <section>
-    <label>
-      <input type="checkbox" [(ngModel)]="selectedGender" id="Male" value="Male" (change)="filterDoctors()"> Male
-    </label>
-
-    <label>
-      <input type="checkbox" [(ngModel)]="maxPriceFilter" value="true" (change)="filterDoctors()"> Price less than 300
-    </label>
-    <label>
-      <input type="checkbox" [(ngModel)]="maxPriceFilter2" value="true" (change)="filterDoctors()">  350
-    </label>
-
-    <div *ngFor="let doctor of filteredDoctors | async">
-      {{ doctor.Name }}
-    </div>
-  </section> -->
-  <!-- <ng-container *ngFor="let doctor of (doctors | filter: gender: price | sort: sortBy)">
-    <p>{{doctor.Name}}</p>
-  </ng-container> -->
-  <!-- <label>
-    <input type="checkbox" [(ngModel)]="genderMale" name="gender"> Filter by gender
-  </label>
-  <label>
-    <input type="checkbox" [(ngModel)]="priceFilter" name="price"> Price less than 300
-  </label>
-  <div *ngFor="let doctor of filterDoctors(doctors)">
-    <p>{{ doctor.Name }} ({{ doctor.Gender }})</p>
-  </div> -->
