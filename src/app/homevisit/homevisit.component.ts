@@ -1,6 +1,7 @@
 import { Component, Renderer2 } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -23,7 +24,7 @@ export class HomevisitComponent {
 
   constructor(private firestore: AngularFirestore , private modalService: NgbModal , private renderer: Renderer2, private formBuilder: FormBuilder
 
-    ) {}
+    ,private router: Router ) {}
 
   onSubmit() {
     if (this.appointmentForm.valid) {
@@ -31,7 +32,8 @@ export class HomevisitComponent {
       this.firestore.collection('homevisits').add(formData)
         .then(() => {
           console.log('Form data saved successfully!');
-          this.appointmentForm.reset();
+          // this.appointmentForm.reset();
+          this.router.navigate(['/QuestionSubmitted']);
         })
         .catch((error) => {
           console.error('Error saving form data: ', error);
