@@ -11,5 +11,6 @@ export interface IDoctor {
     ExaminationFees?: number,
     Gender?:string,
     Entity?:string,
-    Title?:string
+    Title?:string,
+    About?:string
 }

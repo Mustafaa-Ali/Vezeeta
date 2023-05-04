@@ -45,7 +45,15 @@ export class SearchResultComponent implements OnInit{
     console.log("SPE",this.selectedSpeciality);
     console.log("city",this.selectedCity);
 
+    // this.DS.getDoctors().subscribe(doctors => {
+    //   this.doctors = doctors;
+    //   // this.doctor=doctors;
+    //   console.log(this.doctors);
+    // });
 
+    // this.DS.getDoctor().subscribe(doctors => {
+    //   this.doctors = doctors;
+    // });
   }
 
 
@@ -75,23 +83,35 @@ export class SearchResultComponent implements OnInit{
 
 
 
+  async ngOnInit() {
+    try {
+      const doctorsPromise = this.DS.getDoctor(this.doctorName,this.selectedSpeciality,this.selectedCity);
+      const doctorsObservable = await doctorsPromise;
+      doctorsObservable.subscribe(doctors => {
+        this.doctors = doctors;
+        console.log(this.doctors);
 
-
-
-
-  ngOnInit(): void {
-
-
-
-
-    this.DS.getDoctor(this.doctorName,this.selectedSpeciality,this.selectedCity).then((doctors) => {
-      this.doctors = doctors;
-      console.log("NNN",this.doctors);
-
-    });
-
-
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }
+
+
+
+  // ngOnInit(): void {
+
+
+
+
+  //   // this.DS.getDoctor(this.doctorName,this.selectedSpeciality,this.selectedCity).then((doctors) => {
+  //   //   this.doctors = doctors;
+  //   //   console.log("NNN",this.doctors);
+
+  //   // });
+
+
+  // }
 
   updateAppointment(doctor: any, dateSelected: any) {
     this.dateSelected=doctor['dateSelected'] = dateSelected;
