@@ -42,6 +42,14 @@ cursor: pointer;
    border-bottom-right-radius: 0;
 
 }
+.cut-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 400px;
+  height: 1.5em;
+  white-space: nowrap;
+
+}
 </style>
 <section class="container bg-light">
 
@@ -175,7 +183,8 @@ cursor: pointer;
       <div class="col-lg-3 col-sm-12"> <img [src]="doctor.ImgUrl" style="border-radius:50%"></div>
      <div class="col-lg-5 col-sm-12 ">
      <h3 style="color: #0070cd;"> <span style="font-size: small;">{{doctor.Name}}</span></h3>
-       <h5 style="color: gray;">{{doctor.Speciality}}</h5>
+
+       <h5 style="color: gray;" class="cut-text">{{doctor.About}}</h5>
        <div class="mb-2">
        <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
        <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
@@ -189,7 +198,7 @@ cursor: pointer;
        <span class="rounded-5 bg-primary text-white p-2 m-2"> <i class="fa fa-solid fa fa-comment-dots"></i>&nbsp; Informative</span>
       </div>
       <div class="iconDiv">
-      <div><i class="fa fa-solid fa fa-stethoscope"></i>&nbsp; Psychiatrist Specialized in Adult Psychiatry</div>
+      <div ><i class="fa fa-solid fa fa-stethoscope"></i>&nbsp; {{doctor.Speciality}}</div>
       <div><i class="fa fa-solid fa-compass"></i>&nbsp; {{doctor.Location}}</div>
       <div><i class="fa fa-solid fa fa-money-bill-wave"></i>&nbsp; Fees : {{doctor.ExaminationFees}} EGP</div>
       <div><i class="fa fa-solid fa fa-clock"></i>&nbsp; Waiting Time : 23 Minutes</div>

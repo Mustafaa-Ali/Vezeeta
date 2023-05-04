@@ -3,7 +3,7 @@ import { collection, query, where, getDocs, Firestore, QuerySnapshot, Collection
 import { Injectable } from '@angular/core';
 import { collectionData } from '@angular/fire/firestore';
 // import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, from, map, of } from 'rxjs';
 import { AngularFirestore, Query, QueryFn } from '@angular/fire/compat/firestore';
 interface Doctor extends IDoctor {
   id: string;
@@ -104,7 +104,7 @@ export class DoctorsService {
   //  updateDoctors() {
   //   this.setDoctors(this.doctors);
   // }
-  async getDoctor(name?: any, specialityId?: any, cityId?: any) {
+  async getDoctor(name?: any, specialityId?: string, cityId?: string): Promise<Observable<IDoctor[]>>{
     let doctorRef = collection(this.firestore, "Doctor");
     let q: any = query(doctorRef);
 
@@ -123,19 +123,17 @@ export class DoctorsService {
     const querySnapshot = await getDocs(q);
     const doctors: IDoctor[] = [];
     querySnapshot.forEach((doc) => {
-      doctors.push(doc.data() as IDoctor);
+      const doctor = doc.data() as IDoctor;
+      doctor.id = doc.id;
+      doctors.push(doctor);
     });
 
-    return doctors;
+    return of(doctors);
   }
 
-  getDoctorList(): IDoctor[] {
-    return this.doctorList;
-  }
-
-  setDoctorList(doctorList: IDoctor[]): void {
-    this.doctorList = doctorList;
-  }
+  // getDoctorObservable(name?: any, specialityId?: any, cityId?: any): Observable<IDoctor[]> {
+  //   return from(this.getDoctor(name, specialityId, cityId));
+  // }
 
   // getDoctors2(name?: any, specialityId?: any, cityId?: any): Observable<IDoctor[]> {
   //   let doctorRef = collection(this.firestore, 'Doctor');

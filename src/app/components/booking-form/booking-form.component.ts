@@ -37,10 +37,9 @@ export class BookingFormComponent implements OnInit {
   email: string=''
   notes: string=''
   doctorID:any
-  status:string='wait'
   // bookings$!: Observable<any[]>;
-
-
+  showModal = false;
+status:string='Wait'
 
   constructor(
     private fb: FormBuilder,
@@ -66,6 +65,8 @@ export class BookingFormComponent implements OnInit {
       const bookingRef = await this.firestore.collection('bookings').ref.where('doctorID', '==', doctorID).where('dateSelected', '==', this.dateSelected).get();
       if (bookingRef.docs.length > 0) {
         console.error('Booking already exists for this date and time');
+        alert('Booking already exists for this date and time')
+        this.showModal = true;
         return;
       }
 

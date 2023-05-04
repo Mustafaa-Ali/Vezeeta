@@ -55,11 +55,11 @@ export class HomeComponent {
     this.DS.sharedCity=this.selectedCityID
     this.DS.getDoctor(this.doctorName,this.selectedSpecialityID,this.selectedCityID).then((doctors) => {
 
-      this.Doctor = this.DS.doctors = doctors;
-      this.DS.setDoctors(doctors);
+      // this.Doctor = this.DS.doctors = doctors;
+      // this.DS.setDoctors(doctors);
       console.log("MMM", this.Doctor);
       console.log("mmllo", this.DS.doctors);
-      this.DS.getDoctorList()
+
       this.router.navigate(['/searchResult'])
     });
 
@@ -69,11 +69,11 @@ export class HomeComponent {
 
     this.DS.getDoctor(null,specialityName).then((doctors) => {
       this.DS.sharedSpeciality=specialityName;
-        this.Doctor = this.DS.doctors = doctors;
-        this.DS.setDoctors(doctors);
+        // this.Doctor = this.DS.doctors = doctors;
+        // this.DS.setDoctors(doctors);
         console.log("MMM", this.Doctor);
         console.log("mmllo", this.DS.doctors);
-        this.DS.getDoctorList();
+
         this.router.navigate(['/searchResult']);
     });
 }
