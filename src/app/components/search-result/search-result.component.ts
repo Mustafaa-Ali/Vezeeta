@@ -6,7 +6,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Firestore, Timestamp, addDoc, collection } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as firebase from 'firebase/compat';
-import { MbscDatepicker } from '@mobiscroll/angular';
+
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FilterPipe } from 'src/app/Pipes/filter.pipe';
@@ -16,7 +16,7 @@ import { FilterPipe } from 'src/app/Pipes/filter.pipe';
 @Component({
   selector: 'app-search-result',
   templateUrl: './search-result.component.html',
-  styleUrls: ['./search-result.component.scss','../../../../node_modules/@mobiscroll/angular/dist/css/mobiscroll.min.css']
+  styleUrls: ['./search-result.component.scss']
 })
 
 export class SearchResultComponent implements OnInit{

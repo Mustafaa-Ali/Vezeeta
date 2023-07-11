@@ -2,17 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MbscDatepicker, MbscDatepickerOptions, setOptions  } from '@mobiscroll/angular';
+
 import { HttpClient } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AuthService } from './../../services/auth.service';
 import { User } from '@angular/fire/auth';
 import { Observable, map, of, switchMap, take } from 'rxjs';
-setOptions({
-  theme: 'ios',
-  themeVariant: 'light'
-});
 
 
 

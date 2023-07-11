@@ -406,6 +406,12 @@ text-decoration: underline;
     width: unset!important;
     outline: none;
     height: 250px;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    outline: none;
 
 }
 .top-offer .carousel-control-next, .book-from-top .carousel-control-next{
@@ -414,7 +420,33 @@ text-decoration: underline;
     width: unset!important;
     outline: none;
     height: 250px;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    outline: none;
 }
+.carousel-control-next .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  .carousel-control-prev .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
 .top-offer .carousel-control-next-icon, .top-offer .carousel-control-prev-icon, 
 .book-from-top .carousel-control-next-icon, .book-from-top .carousel-control-prev-icon  {
     display: inline-block;

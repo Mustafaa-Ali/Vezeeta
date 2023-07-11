@@ -20,7 +20,7 @@ import { QuestionSubmittedComponent } from './components/question-submitted/ques
 
 const routes: Routes = [
 
-  {path:'',redirectTo:'/Home',pathMatch:'full'},
+  {path:'',redirectTo:'Home',pathMatch:'full'},
   {path:'Home',component: HomeComponent,canActivate:[AuthGuardGuard]},
   {path: 'ContactUs',component: ContactUsComponent ,canActivate:[AuthGuardGuard]},
   {path: 'PrivatePolicy',component: PrivacyPolicyComponent,canActivate:[AuthGuardGuard] },

@@ -22,7 +22,7 @@ import { AuthService } from './services/auth.service';
 
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MbscModule } from '@mobiscroll/angular/';
+
 
 import { NgbDatepicker, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -53,7 +53,7 @@ import { HttpClient } from '@angular/common/http';
 import { HomevisitComponent } from './homevisit/homevisit.component';
 import { TeleconsultationComponent } from './teleconsultation/teleconsultation.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
+
 import { MedicalQuestionComponent } from './medical-question/medical-question.component';
 import { QuestionSubmittedComponent } from './components/question-submitted/question-submitted.component';
 
@@ -99,8 +99,7 @@ export function httpTranslateLoaderFactory(http:HttpClient){
 
     NgxPaginationModule,
 
-    DlDateTimeDateModule,
-    DlDateTimePickerModule,
+    
 
 
     HttpClientJsonpModule,
